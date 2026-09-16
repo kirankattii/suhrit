@@ -1,4 +1,6 @@
-import { router } from "expo-router";
+const fs = require('fs');
+
+const content = `import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import {
   ArrowRight,
@@ -159,7 +161,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Explore Suhrit Grid */}
-        <View className="px-6 mt-10 pb-8">
+        <View className="px-6 mt-10 pb-32">
           <Text className="text-suhrhit-primary text-[24px] mb-6" style={{ fontFamily: 'Georgia' }}>
             Explore Suhrit
           </Text>
@@ -224,3 +226,7 @@ export default function HomeScreen() {
     </View>
   );
 }
+`;
+
+fs.writeFileSync('src/app/home.tsx', content, 'utf8');
+console.log('Rewrote src/app/home.tsx');

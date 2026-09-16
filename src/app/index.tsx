@@ -35,7 +35,7 @@ export default function Index() {
 
       <ActivityIndicator
         className="mt-6"
-        color="#173F35"
+        color="#183059"
       />
     </View>
   );

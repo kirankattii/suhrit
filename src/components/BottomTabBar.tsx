@@ -18,22 +18,22 @@ export default function BottomTabBar() {
       style={{ paddingBottom: Math.max(insets.bottom, 16) }}
     >
       <TouchableOpacity onPress={() => router.push("/home")} className="items-center">
-        <Home color={isHome ? "#173F35" : "#8BAF9F"} size={24} strokeWidth={isHome ? 2.5 : 2} />
+        <Home color={isHome ? "#183059" : "#7293B3"} size={24} strokeWidth={isHome ? 2.5 : 2} />
         <Text className={`${isHome ? "text-suhrhit-primary font-bold" : "text-suhrhit-secondary font-medium"} text-[11px] mt-1`}>Home</Text>
       </TouchableOpacity>
       
       <TouchableOpacity onPress={() => router.push("/progress")} className="items-center">
-        <Sprout color={isInsights ? "#173F35" : "#8BAF9F"} size={24} strokeWidth={isInsights ? 2.5 : 2} />
+        <Sprout color={isInsights ? "#183059" : "#7293B3"} size={24} strokeWidth={isInsights ? 2.5 : 2} />
         <Text className={`${isInsights ? "text-suhrhit-primary font-bold" : "text-suhrhit-secondary font-medium"} text-[11px] mt-1`}>Insights</Text>
       </TouchableOpacity>
       
       <TouchableOpacity className="items-center">
-        <BookOpen color={isResources ? "#173F35" : "#8BAF9F"} size={24} strokeWidth={isResources ? 2.5 : 2} />
+        <BookOpen color={isResources ? "#183059" : "#7293B3"} size={24} strokeWidth={isResources ? 2.5 : 2} />
         <Text className={`${isResources ? "text-suhrhit-primary font-bold" : "text-suhrhit-secondary font-medium"} text-[11px] mt-1`}>Resources</Text>
       </TouchableOpacity>
       
       <TouchableOpacity className="items-center" onPress={() => router.push("/profile?edit=true")}>
-        <UserRound color={isProfile ? "#173F35" : "#8BAF9F"} size={24} strokeWidth={isProfile ? 2.5 : 2} />
+        <UserRound color={isProfile ? "#183059" : "#7293B3"} size={24} strokeWidth={isProfile ? 2.5 : 2} />
         <Text className={`${isProfile ? "text-suhrhit-primary font-bold" : "text-suhrhit-secondary font-medium"} text-[11px] mt-1`}>Profile</Text>
       </TouchableOpacity>
     </View>

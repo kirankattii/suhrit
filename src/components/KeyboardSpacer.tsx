@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Keyboard, Platform, Animated } from "react-native";
 
-export default function KeyboardSpacer() {
+export default function KeyboardSpacer({ offset = 100 }: { offset?: number }) {
   const [keyboardSpace] = useState(new Animated.Value(0));
 
   useEffect(() => {
@@ -9,8 +9,8 @@ export default function KeyboardSpacer() {
     const hideEvent = Platform.OS === "ios" ? "keyboardWillHide" : "keyboardDidHide";
 
     const showSub = Keyboard.addListener(showEvent, (e) => {
-      // Reduce the height by 100 to account for the sticky footer and safe area
-      const adjustedHeight = Math.max(0, e.endCoordinates.height - 100);
+      // Reduce the height by offset to account for the sticky footer and safe area
+      const adjustedHeight = Math.max(0, e.endCoordinates.height - offset);
       Animated.timing(keyboardSpace, {
         toValue: adjustedHeight,
         duration: 250,

@@ -165,7 +165,7 @@ export default function ProfileScreen() {
               }} 
               className="-ml-2 p-2 w-10"
             >
-              <ChevronLeft color="#173F35" size={28} />
+              <ChevronLeft color="#183059" size={28} />
             </TouchableOpacity>
             
             <View className="w-24">

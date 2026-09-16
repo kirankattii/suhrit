@@ -29,14 +29,14 @@ export function ExploreMenuItem({
       className="bg-white rounded-[24px] p-5 mb-3 flex-row items-center border border-suhrhit-border/50"
       style={{ shadowColor: "#000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.03, shadowRadius: 8, elevation: 2 }}
     >
-      <View className="bg-[#EEF4F1] w-12 h-12 rounded-full items-center justify-center mr-4">
-        <Icon color="#173F35" size={24} strokeWidth={2} />
+      <View className="bg-[#E6F0FA] w-12 h-12 rounded-full items-center justify-center mr-4">
+        <Icon color="#183059" size={24} strokeWidth={2} />
       </View>
       <View className="flex-1">
         <Text className="text-suhrhit-primary font-bold text-[15px]">{title}</Text>
         <Text className="text-suhrhit-secondary text-[13px] mt-0.5 pr-2">{subtitle}</Text>
       </View>
-      <ChevronRight color="#8BAF9F" size={20} strokeWidth={2.5} />
+      <ChevronRight color="#7293B3" size={20} strokeWidth={2.5} />
     </TouchableOpacity>
   );
 }
@@ -51,7 +51,7 @@ export default function ExploreLayout({ title, subtitle, imageSource, children }
           {/* Header */}
           <View className="flex-row items-center justify-between z-10 mb-6">
             <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 items-start justify-center">
-              <ChevronLeft color="#173F35" size={28} strokeWidth={2.5} />
+              <ChevronLeft color="#183059" size={28} strokeWidth={2.5} />
             </TouchableOpacity>
             <Text className="text-suhrhit-primary text-[20px] font-medium text-center absolute w-full -z-10" style={{ fontFamily: 'Georgia' }}>
               {title}

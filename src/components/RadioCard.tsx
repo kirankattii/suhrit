@@ -27,7 +27,7 @@ export default function RadioCard({
       }}
       className={`mb-3 rounded-2xl border py-3 px-4 ${
         selected
-          ? "border-suhrhit-primary bg-[#EEF4F1]"
+          ? "border-suhrhit-primary bg-[#E6F0FA]"
           : "border-suhrhit-border bg-white"
       }`}
     >

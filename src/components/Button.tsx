@@ -54,7 +54,7 @@ export default function Button({
     >
       {loading ? (
         <ActivityIndicator
-          color={isPrimary ? "#FFFFFF" : "#173F35"}
+          color={isPrimary ? "#FFFFFF" : "#183059"}
         />
       ) : (
         <Text

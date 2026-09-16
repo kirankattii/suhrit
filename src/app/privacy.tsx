@@ -34,13 +34,13 @@ export default function PrivacyScreen() {
 
   return (
     <SafeAreaView
-      className="flex-1 bg-[#F5F8FA]"
+      className="flex-1 bg-[#F0F5FA]"
       edges={["top", "bottom"]}
     >
       {/* Header */}
       <View className="flex-row items-center px-4 py-4">
         <TouchableOpacity onPress={() => router.back()} className="p-2">
-          <ChevronLeft color="#173F35" size={28} />
+          <ChevronLeft color="#183059" size={28} />
         </TouchableOpacity>
         <Text
           className="flex-1 text-center text-[22px] font-semibold text-suhrhit-primary"
@@ -58,7 +58,7 @@ export default function PrivacyScreen() {
       >
         {/* Leaf Icon */}
         <View className="items-center pb-6 pt-2">
-          <Leaf color="#173F35" size={32} />
+          <Leaf color="#183059" size={32} />
         </View>
 
         {/* White Card */}
@@ -77,7 +77,7 @@ export default function PrivacyScreen() {
             {/* Item 1 */}
             <View className="flex-row">
               <View className="mt-1">
-                <ShieldCheck color="#173F35" size={32} />
+                <ShieldCheck color="#183059" size={32} />
               </View>
               <View className="ml-4 flex-1">
                 <Text
@@ -95,7 +95,7 @@ export default function PrivacyScreen() {
             {/* Item 2 */}
             <View className="flex-row">
               <View className="mt-1">
-                <Lock color="#173F35" size={32} />
+                <Lock color="#183059" size={32} />
               </View>
               <View className="ml-4 flex-1">
                 <Text
@@ -113,7 +113,7 @@ export default function PrivacyScreen() {
             {/* Item 3 */}
             <View className="flex-row">
               <View className="mt-1">
-                <Heart color="#173F35" size={32} />
+                <Heart color="#183059" size={32} />
               </View>
               <View className="ml-4 flex-1">
                 <Text

@@ -13,7 +13,7 @@ export default function RootLayout() {
           headerShown: false,
           animation: "fade",
           contentStyle: {
-            backgroundColor: "#F7F7F3",
+            backgroundColor: "#F0F5FA",
           },
         }}
       />

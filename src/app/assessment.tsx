@@ -127,7 +127,7 @@ export default function AssessmentScreen() {
       <View className="px-6 pt-8">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={handleBack} className="-ml-2 w-10 p-2">
-            <ChevronLeft color="#173F35" size={28} />
+            <ChevronLeft color="#183059" size={28} />
           </TouchableOpacity>
 
           <View className="flex-row items-center gap-1">

@@ -45,7 +45,7 @@ export default function ProgressScreen() {
     <Screen scroll bottomBar={<BottomTabBar />}>
       <View className="px-6 pt-8 pb-12">
         <TouchableOpacity onPress={() => router.back()} className="-ml-2 mb-6 w-10 p-2">
-          <ChevronLeft color="#173F35" size={28} />
+          <ChevronLeft color="#183059" size={28} />
         </TouchableOpacity>
 
         <Heading className="mb-2">My Progress</Heading>
@@ -66,7 +66,7 @@ export default function ProgressScreen() {
 
         <View className="flex-row items-center justify-between mb-4">
           <SubHeading>Well-being Over Time</SubHeading>
-          <TrendingUp color="#8BAF9F" size={20} />
+          <TrendingUp color="#7293B3" size={20} />
         </View>
         
         {who5History.length === 0 ? (
@@ -80,7 +80,7 @@ export default function ProgressScreen() {
           </View>
         ) : (
           <View className="bg-white rounded-3xl border border-suhrhit-border overflow-hidden mb-8">
-            <View className="flex-row bg-[#EEF4F1] p-4 border-b border-suhrhit-border">
+            <View className="flex-row bg-[#E6F0FA] p-4 border-b border-suhrhit-border">
               <Text className="flex-1 font-semibold text-suhrhit-primary text-[13px]">Date</Text>
               <Text className="font-semibold text-suhrhit-primary text-[13px]">Score</Text>
             </View>

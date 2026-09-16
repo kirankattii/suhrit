@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 interface ScreenProps extends PropsWithChildren {
   scroll?: boolean;
+  header?: ReactNode;
   footer?: ReactNode;
   bottomBar?: ReactNode;
   scrollViewRef?: React.RefObject<ScrollView>;
@@ -12,6 +13,7 @@ interface ScreenProps extends PropsWithChildren {
 export default function Screen({
   children,
   scroll = false,
+  header,
   footer,
   bottomBar,
   scrollViewRef,
@@ -39,6 +41,7 @@ export default function Screen({
       className="flex-1 bg-suhrhit-background"
       edges={bottomBar ? ["top"] : ["top", "bottom"]}
     >
+      {header}
       {content}
       {footer && (
         <View

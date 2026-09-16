@@ -30,7 +30,7 @@ export default function Input({
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor="#98A29F"
+        placeholderTextColor="#A6B9C7"
         keyboardType={keyboardType}
         autoCapitalize={
           keyboardType === "default"

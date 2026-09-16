@@ -1,0 +1,297 @@
+So I will tell you how we are doing of relationship and social life:
+
+So when the user opens the relationship and social life tab they get one test called: MSPSS which will assess their perceived social support with 12 questions.
+
+Then they choose:
+Type of Relationships:
+1. Romantic relationship 
+2. Peer/ colleague/ Friends 
+3. Family 
+
+Now we will test how is the each relationship based on what they select:
+If they select ;
+1. Romantic relationship: RAS test
+2. Family: FFCS
+3. Friends: FNS
+
+Based on the result we will not give strict interpretation instead will give personalized statement based interpretation. I mean if their romantic relationship is bad we will say tht your support area in this seems low , do you like to explore more?
+
+With these open end interpretation they are allowed to choose further problems in particular area:
+
+ *1.In Family:* 
+Communication
+Conflict/anger
+Family expectations & values
+Emotional connection
+Boundaries/autonomy
+
+ *2. In romantic relationship:* Communication
+Conflict
+Emotional intimacy
+Trust
+Boundaries
+Unequal responsibilities
+Feeling controlled
+Relationship insecurity
+Something else
+
+ *3. Peers:* 
+Loneliness
+Difficulty maintaining friendships
+Social connection
+Communication
+Conflict
+Feeling unsupported
+Social anxiety/insecurity
+Something else
+
+
+
+Then when they choose smthg from it will give solution and ask if it was helpful and track it's usefulness.
+
+This test is under the family section of relationships and social life
+
+
+[6:31 PM, 9/16/2026] Srushti Sister: This test is for Romantic relationship of relationships and social life
+[6:35 PM, 9/16/2026] Srushti Sister: Relationship Assessment Scale (RAS)
+
+Purpose: Measures overall satisfaction with a current romantic relationship.
+
+Items: 7
+Response scale: 1–5
+Scoring range: 7–35
+Higher score: Greater relationship satisfaction
+
+Scoring
+
+Items 4 and 7 are reverse-scored:
+
+- 1 → 5
+- 2 → 4
+- 3 → 3
+- 4 → 2
+- 5 → 1
+
+Then calculate:
+
+Total RAS Score = Sum of all 7 scored items
+
+Also display:
+
+Mean Score = Total Score ÷ 7
+
+Mean range: 1.00–5.00
+
+Result interpretation for the app
+
+Total Score| Display
+7–17| Lower relationship satisfaction
+18–24| Moderate relationship satisfaction
+25–35| Higher relationship satisfaction
+
+Important: These ranges should be treated as descriptive app bands, not diagnostic or universally validated clinical cut-offs. The original RAS establishes higher scores as indicating greater relationship satisfaction, but does not establish these three categories as clinical thresholds.
+
+Example result screen
+
+Your Relationship Satisfaction Score
+
+28 / 35
+Higher relationship satisfaction
+
+«Your responses suggest that you currently perceive a relatively high level of satisfaction in your relationship.»
+
+Explore your relationship further
+
+- Communication
+- Emotional connection
+- Managing disagreements
+- Boundaries & mutual respect
+- Building a healthy relationship
+
+Note:
+This assessment reflects your current perception of relationship satisfaction. It is not a diagnosis and does not determine whether a relationship is healthy, safe, or suitable.
+
+Recommended app action
+
+After displaying the RAS result, do not give a conclusion such as “Your relationship is healthy.”
+
+Instead, show:
+
+“Would you like support with something in your relationship?”
+
+Options:
+
+- Communication
+- Frequent disagreements
+- Trust
+- Emotional connection
+- Boundaries
+- Feeling unheard or unsupported
+- Something else
+- I’m not sure
+
+
+FRIENDS — Friendship Network Satisfaction
+
+Purpose
+
+To assess the user's satisfaction with their current friendship network, including closeness, emotional connection, communication, and social interaction.
+
+Scale: Friendship Network Satisfaction (FNS) Scale
+Items: 14
+Response: 0–5
+Scoring: Higher score = greater friendship-network satisfaction
+Time frame: Friendships/contact during the past year
+
+---
+
+Instructions shown to the user
+
+Please rate how much you agree with each statement about your friends, including your best friends, close friends, and other friends you have had contact with during the past year.
+
+Response options
+
+Score| Response
+0| Not at all agree
+1| Hardly agree
+2| Somewhat agree
+3| Pretty much agree
+4| Very much agree
+5| Completely agree
+
+---
+
+Questionnaire
+
+Closeness
+
+1. I feel close to my friends.
+
+2. It is hard to imagine my life without my close/best friends.
+
+3. My friends celebrate my good news.
+
+4. I have fun with my friends.
+
+5. I have meaningful conversations with my friends.
+
+6. I like to hang out with my friends.
+
+7. My friends understand me.
+
+8. When I have a problem, I can talk to my friends about it.
+
+Socializing
+
+9. I spend a lot of time socializing with my friends.
+
+10. My friends and I go out and do things together.
+
+11. My friends and I eat together often.
+
+12. I attend social events with my friends.
+
+13. I spend free time with my friends.
+
+14. I socialize with a lot of different people.
+
+These are the published 14 items of the FNS Scale.
+
+---
+
+SCORING
+
+Total Score
+
+Add the scores for all 14 items.
+
+Minimum = 0
+Maximum = 70
+
+Formula:
+
+"FNS Total Score = Item 1 + Item 2 + ... + Item 14"
+
+There are no reverse-scored items.
+
+Mean Score
+
+"Mean Score = Total Score ÷ 14"
+
+Range: 0–5
+
+Higher scores indicate greater satisfaction with the user's friendship network.
+
+---
+
+RESULT SCREEN
+
+Example
+
+Your Friendship Satisfaction
+
+52 / 70
+
+Mean: 3.71 / 5
+
+«Your responses indicate a relatively high level of satisfaction with your friendships.»
+
+What this means
+
+Your responses reflect how close, supported and socially connected you currently feel with your friends.
+
+The FNS measures friendship-network satisfaction; it does not diagnose loneliness, mental illness, or determine whether a friendship is objectively healthy or unhealthy.
+
+---
+
+IMPORTANT FOR INTERPRETATION
+
+The original FNS research establishes that higher scores represent greater friendship-network satisfaction, but it does not establish clinical cut-offs such as “low,” “moderate,” and “high.” Therefore, the app should not present invented clinical thresholds as if they were validated.
+
+For the prototype, if you want simple user-facing bands, label them explicitly as app-generated descriptive ranges, not clinical cut-offs.
+
+For example:
+
+0–23: Lower satisfaction
+24–46: Moderate satisfaction
+47–70: Higher satisfaction
+
+Developer note: These are descriptive prototype bands based on the total score range and are not validated diagnostic thresholds.
+
+---
+
+AFTER THE RESULT
+
+If the score falls in the app's lower/descriptive range, show:
+
+“Would you like to explore your friendships further?”
+
+What would you like to explore?
+
+☐ Feeling disconnected from friends
+☐ Difficulty communicating
+☐ Feeling misunderstood
+☐ Lack of emotional support
+☐ Difficulty making or maintaining friendships
+☐ Not spending enough time together
+☐ Conflicts or disagreements
+☐ Feeling lonely
+☐ Something else
+
+After the user selects an area, provide evidence-based psychoeducation, practical coping/communication strategies, and an option to access Professional Support when appropriate.
+
+If the score is moderate or higher, the app can still offer:
+
+“Would you like to strengthen your friendships?”
+
+→ Communication
+→ Emotional connection
+→ Maintaining friendships
+→ Social connection
+→ Setting healthy boundaries
+
+---
+
+Scientific note for developer
+
+The FNS was developed as a 14-item measure with two content domains—closeness (8 items) and socializing (6 items)—but the researchers found sufficient evidence to support a general overall score. Therefore, for SUHRIT, use the total FNS score as the primary result, rather than presenting separate “Closeness” and “Socializing” scores as validated standalone results.

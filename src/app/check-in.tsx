@@ -28,7 +28,7 @@ const EmojiScaleSelector = ({
           onPress={() => onChange(idx + 1)}
           className={`mx-1 flex-1 items-center justify-center rounded-xl border py-3 px-1 ${
             selected
-              ? "border-suhrhit-primary bg-[#EEF4F1]"
+              ? "border-suhrhit-primary bg-[#E6F0FA]"
               : "border-suhrhit-border bg-white"
           }`}
           style={{ minHeight: 80 }}
@@ -225,7 +225,7 @@ export default function CheckInScreen() {
     >
       <View className="px-6 pt-8">
         <TouchableOpacity onPress={() => router.back()} className="-ml-2 mb-6 w-10 p-2">
-          <ChevronLeft color="#173F35" size={28} />
+          <ChevronLeft color="#183059" size={28} />
         </TouchableOpacity>
 
         <Heading className="mb-2">How are you doing today?</Heading>

@@ -73,7 +73,7 @@ export default function AssessmentResultScreen() {
         
         <Heading className="mb-8 text-center">Your Well-being Score</Heading>
         
-        <View className="bg-[#EEF4F1] h-40 w-40 rounded-full items-center justify-center border-4 border-suhrhit-primary/20 mb-8 shadow-sm">
+        <View className="bg-[#E6F0FA] h-40 w-40 rounded-full items-center justify-center border-4 border-suhrhit-primary/20 mb-8 shadow-sm">
           <Text className="text-suhrhit-primary text-5xl font-bold font-serif">{percentage}</Text>
           <Text className="text-suhrhit-primary/60 text-lg font-medium mt-1">/ 100</Text>
         </View>
@@ -86,11 +86,11 @@ export default function AssessmentResultScreen() {
 
         {saving ? (
           <View className="items-center justify-center p-4">
-            <ActivityIndicator color="#173F35" />
+            <ActivityIndicator color="#183059" />
             <Text className="mt-2 text-suhrhit-muted text-[13px]">Generating personalized insight...</Text>
           </View>
         ) : insight ? (
-          <View className="bg-[#Fdfcf7] p-6 rounded-3xl border border-suhrhit-accent/30 w-full mb-6 relative overflow-hidden">
+          <View className="bg-[#F8FAFC] p-6 rounded-3xl border border-suhrhit-accent/30 w-full mb-6 relative overflow-hidden">
             <Text className="absolute top-4 right-4 text-2xl opacity-20">✨</Text>
             <SubHeading className="mb-2 text-suhrhit-primary">AI Insight</SubHeading>
             <Text className="text-suhrhit-text text-[14px] leading-[22px]">

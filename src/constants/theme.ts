@@ -1,23 +1,23 @@
 export const COLORS = {
-    primary: "#173F35",
-    secondary: "#8BAF9F",
-  
-    background: "#F7F7F3",
-    surface: "#FFFFFF",
-  
-    accent: "#E8B89A",
-  
-    text: "#17211F",
-    muted: "#66736F",
-    light: "#98A29F",
-  
-    border: "#E4E9E6",
-  
-    error: "#C95D5D",
-  
-    white: "#FFFFFF",
-    black: "#000000",
-  };
+  primary: "#183059",
+  secondary: "#7293B3",
+
+  background: "#F0F5FA",
+  surface: "#FFFFFF",
+
+  accent: "#A3C4E0",
+
+  text: "#183059",
+  muted: "#647B91",
+  light: "#A6B9C7",
+
+  border: "#DDE4EB",
+
+  error: "#D35F5F",
+
+  white: "#FFFFFF",
+  black: "#000000",
+};
   
   export const SPACING = {
     xs: 4,
