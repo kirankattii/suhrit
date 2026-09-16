@@ -1,0 +1,271 @@
+SUHRIT – WELL-BEING SECTION
+
+Overall Structure
+
+The Well-being section should have 3 parts:
+
+1. Well-being Assessment
+
+WHO-5 Well-Being Index
+→ Validated psychological well-being assessment
+→ Measures well-being over the last 2 weeks
+
+2. Daily Check-in
+
+→ Mood
+→ Stress
+→ Energy
+→ Sleep duration
+→ Physical activity
+
+These are tracking features, not part of the WHO-5.
+
+3. My Progress
+
+→ WHO-5 score history
+→ Sleep trends
+→ Activity trends
+→ Mood, stress and energy trends
+
+---
+
+1. WHO-5 WELL-BEING ASSESSMENT
+
+Heading:
+
+How have you been feeling lately?
+
+Instruction:
+
+«Please indicate which of the following statements best describes how you have felt over the last two weeks.»
+
+Questions
+
+Q1.
+
+I have felt cheerful and in good spirits.
+
+Q2.
+
+I have felt calm and relaxed.
+
+Q3.
+
+I have felt active and vigorous.
+
+Q4.
+
+I woke up feeling fresh and rested.
+
+Q5.
+
+My daily life has been filled with things that interest me.
+
+---
+
+Response options
+
+Every question should have the same six options:
+
+Response| Score
+All of the time| 5
+Most of the time| 4
+More than half of the time| 3
+Less than half of the time| 2
+Some of the time| 1
+At no time| 0
+
+The user selects one response per question.
+
+---
+
+2. WHO-5 SCORING
+
+Step 1 – Raw score
+
+Add the scores of all 5 questions.
+
+Raw score = Q1 + Q2 + Q3 + Q4 + Q5
+
+Possible range:
+
+0–25
+
+Step 2 – Percentage score
+
+WHO-5 percentage score = Raw score × 4
+
+Possible range:
+
+0–100
+
+Higher score = better psychological well-being.
+
+---
+
+3. WHO-5 RESULT SCREEN
+
+After submitting, display:
+
+Your Well-being Score
+
+XX / 100
+
+Then provide a simple interpretation.
+
+Score interpretation
+
+0–28
+
+«Your current well-being score is relatively low. You may benefit from exploring the support and well-being resources available in SUHRIT.»
+
+29–49
+
+«Your current well-being score suggests that your well-being may need some attention. Consider exploring the support and activities available in SUHRIT.»
+
+50–100
+
+«Your current well-being score is in a range generally associated with better well-being. Continue supporting your well-being through healthy routines and activities.»
+
+Important note below the result:
+
+«This assessment is not a diagnosis. A lower score does not mean that you have a mental health disorder. If you are concerned about your well-being, consider speaking with a qualified professional.»
+
+For scores below 50, the app may additionally display:
+
+«Would you like to explore some well-being support?»
+
+Buttons:
+
+Explore Support
+View Professional Support
+Continue to Home
+
+---
+
+4. WHO-5 RESULT HISTORY
+
+The app should save each completed WHO-5 assessment with:
+
+- Date
+- Raw score (0–25)
+- Percentage score (0–100)
+
+Show a simple graph:
+
+My Well-being Over Time
+
+Example:
+
+Date| Score
+1 Sept| 64
+15 Sept| 72
+29 Sept| 68
+
+The user should be able to see whether their score is changing over time.
+
+Important:
+
+Do not compare a user's score with other users or create a ranking.
+
+---
+
+5. DAILY CHECK-IN
+
+This is separate from WHO-5.
+
+Heading:
+
+How are you doing today?
+
+These questions are for personal tracking, not psychological diagnosis.
+
+---
+
+A. MOOD
+
+“How are you feeling today?”
+
+Options:
+
+- Very low
+- Low
+- Okay
+- Good
+- Very good
+
+Score internally from 1–5 if needed for graphs.
+
+---
+
+B. STRESS
+
+“How would you describe your stress today?”
+
+Options:
+
+- Very low
+- Low
+- Moderate
+- High
+- Very high
+
+Score internally from 1–5.
+
+Higher score = greater perceived stress.
+
+---
+
+C. ENERGY
+
+“How is your energy today?”
+
+Options:
+
+- Very low
+- Low
+- Moderate
+- High
+- Very high
+
+Score internally from 1–5.
+
+Higher score = greater energy.
+
+---
+
+6. SLEEP TRACKING
+
+Keep this very simple.
+
+Question 1:
+
+What time did you go to bed?
+
+→ Time picker
+
+Question 2:
+
+What time did you wake up?
+
+→ Time picker
+
+The app automatically calculates:
+
+Sleep duration = Wake-up time − Bedtime
+
+Example:
+
+10:30 PM → 6:30 AM
+
+Sleep duration: 8 hours
+
+If the sleep period crosses midnight, the app should calculate it correctly.
+
+Progress display:
+
+Average sleep duration
+
+Example:
+
+«�
