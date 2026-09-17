@@ -8,7 +8,7 @@ export async function generateInsight(
   maxRetries = 3,
 ): Promise<string | null> {
   const profile = await getProfile();
-  
+
   let profileContext = "";
   if (profile) {
     profileContext = `[USER PROFILE CONTEXT]
@@ -35,7 +35,7 @@ Note: Always adapt your tone, empathy, and advice to match this user's specific 
         body: JSON.stringify({
           // model: "openai/gpt-5.6-sol",
           // model: "openai/gpt-5.3-codex-spark",
-          model: "deepseek/deepseek-v4-pro",
+          model: "minimax/minimax-m3:free",
 
           messages: [{ role: "user", content: finalPrompt }],
         }),

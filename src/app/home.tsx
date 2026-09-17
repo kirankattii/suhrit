@@ -12,19 +12,35 @@ import {
   Sparkles,
   Leaf
 } from "lucide-react-native";
-import { useEffect, useState } from "react";
-import { Text, View, ScrollView, TouchableOpacity, Dimensions } from "react-native";
+import { useFocusEffect } from "expo-router";
+import { useEffect, useState, useCallback } from "react";
+import { Text, View, ScrollView, TouchableOpacity, Dimensions, Image, Alert } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import BottomTabBar from "../components/BottomTabBar";
 import { getProfile, ProfileData } from "../storage/onboarding";
+import { canTakeDailyCheckin, canTakeWHO5 } from "../storage/wellbeing";
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = (width - 48 - 16) / 2; // 48 for px-6, 16 for gap
 
 export default function HomeScreen() {
   const [profile, setProfile] = useState<ProfileData | null>(null);
+  const [allowDailyCheckin, setAllowDailyCheckin] = useState(true);
+  const [allowWHO5, setAllowWHO5] = useState(true);
   const insets = useSafeAreaInsets();
+
+  useFocusEffect(
+    useCallback(() => {
+      const checkAvailability = async () => {
+        const canDaily = await canTakeDailyCheckin();
+        const canW5 = await canTakeWHO5();
+        setAllowDailyCheckin(canDaily);
+        setAllowWHO5(canW5);
+      };
+      checkAvailability();
+    }, [])
+  );
 
   useEffect(() => {
     const loadProfile = async () => {
@@ -129,8 +145,14 @@ export default function HomeScreen() {
                <Text className="text-suhrhit-primary/50 font-bold text-[11px] uppercase tracking-widest mb-1.5">Daily Check-in</Text>
                <Text className="text-suhrhit-primary font-bold text-[18px] mb-4 leading-tight">How are you{"\n"}feeling today?</Text>
                <TouchableOpacity 
-                 onPress={() => router.push("/check-in")} 
-                 className="bg-suhrhit-primary rounded-full py-3 px-6 flex-row items-center justify-center self-start shadow-sm"
+                 onPress={() => {
+                   if (allowDailyCheckin) {
+                     router.push("/check-in");
+                   } else {
+                     Alert.alert("Already checked in!", "You have already completed your daily check-in for today. Come back tomorrow!");
+                   }
+                 }} 
+                 className={`rounded-full py-3 px-6 flex-row items-center justify-center self-start shadow-sm ${allowDailyCheckin ? 'bg-suhrhit-primary' : 'bg-suhrhit-primary/50'}`}
                >
                   <Text className="text-white font-semibold mr-2 text-[14px]">Check-in</Text>
                   <ArrowRight color="white" size={16} strokeWidth={2.5} />
@@ -142,12 +164,21 @@ export default function HomeScreen() {
         {/* WHO-5 Assessment Card */}
         <View className="px-6 mt-8">
           <TouchableOpacity 
-            onPress={() => router.push("/assessment")} 
-            className="bg-[#F5F9FF] rounded-[28px] p-6 border border-[#E6F0FA] flex-row items-center justify-between"
+            onPress={() => {
+              if (allowWHO5) {
+                router.push("/assessment");
+              } else {
+                Alert.alert("Already taken!", "You have already taken the WHO-5 assessment this week. You can take it again next Monday.");
+              }
+            }} 
+            className={`rounded-[28px] p-6 border flex-row items-center justify-between ${allowWHO5 ? 'bg-[#F5F9FF] border-[#E6F0FA]' : 'bg-[#F0F0F0] border-[#E0E0E0]'}`}
           >
              <View className="flex-1 mr-5">
                 <Text className="text-suhrhit-primary font-bold text-[17px] mb-2">WHO-5 Well-being</Text>
-                <Text className="text-suhrhit-primary/70 text-[14px] leading-[20px]">Take a quick assessment to understand your overall wellness.</Text>
+                <Text className="text-suhrhit-primary/70 text-[14px] leading-[20px] mb-2">Take a quick assessment to understand your overall wellness.</Text>
+                <View className="bg-white/80 self-start px-2 py-1 rounded-md border border-suhrhit-primary/10">
+                  <Text className="text-suhrhit-primary font-bold text-[10px] uppercase">Once in a week</Text>
+                </View>
              </View>
              <View 
                className="bg-white w-14 h-14 rounded-full items-center justify-center"
@@ -172,8 +203,12 @@ export default function HomeScreen() {
                className="bg-white rounded-[28px] p-5 items-center justify-center aspect-square border border-[#F0F5FA]"
                activeOpacity={0.7}
              >
-                <View className="w-16 h-16 rounded-full bg-[#F5F9FF] items-center justify-center mb-4">
-                  <Flower2 color="#183059" size={32} strokeWidth={1.5} />
+                <View className="w-16 h-16 rounded-full bg-[#F5F9FF] items-center justify-center mb-4 overflow-hidden">
+                  <Image 
+                    source={require("../assets/images/explore/menstrual_drop.jpg")} 
+                    className="w-12 h-12"
+                    resizeMode="contain"
+                  />
                 </View>
                 <Text className="text-suhrhit-primary font-semibold text-center leading-[20px] text-[15px]">Menstrual{"\n"}Well-being</Text>
              </TouchableOpacity>
@@ -185,8 +220,12 @@ export default function HomeScreen() {
                className="bg-white rounded-[28px] p-5 items-center justify-center aspect-square border border-[#F0F5FA]"
                activeOpacity={0.7}
              >
-                <View className="w-16 h-16 rounded-full bg-[#F5F9FF] items-center justify-center mb-4">
-                  <Baby color="#183059" size={32} strokeWidth={1.5} />
+                <View className="w-16 h-16 rounded-full bg-[#F5F9FF] items-center justify-center mb-4 overflow-hidden">
+                  <Image 
+                    source={require("../assets/images/explore/pregnancy_icon.jpg")} 
+                    className="w-14 h-14"
+                    resizeMode="contain"
+                  />
                 </View>
                 <Text className="text-suhrhit-primary font-semibold text-center leading-[20px] text-[15px]">Pregnancy &{"\n"}Postpartum</Text>
              </TouchableOpacity>
@@ -198,8 +237,12 @@ export default function HomeScreen() {
                className="bg-white rounded-[28px] p-5 items-center justify-center aspect-square border border-[#F0F5FA]"
                activeOpacity={0.7}
              >
-                <View className="w-16 h-16 rounded-full bg-[#F5F9FF] items-center justify-center mb-4">
-                  <Users color="#183059" size={32} strokeWidth={1.5} />
+                <View className="w-16 h-16 rounded-full bg-[#F5F9FF] items-center justify-center mb-4 overflow-hidden">
+                  <Image 
+                    source={require("../assets/images/explore/relationship_hug.jpg")} 
+                    className="w-16 h-16"
+                    resizeMode="cover"
+                  />
                 </View>
                 <Text className="text-suhrhit-primary font-semibold text-center leading-[20px] text-[15px]">Relationships{"\n"}& Social Life</Text>
              </TouchableOpacity>

@@ -18,13 +18,13 @@ export default function PregnancyScreen() {
         icon={Flower2}
         title="Preconception"
         subtitle="Plan and prepare"
-        onPress={() => navigateToDetail("Preconception", "Plan and prepare")}
+        onPress={() => router.push("/explore/pregnancy/preconception")}
       />
       <ExploreMenuItem
         icon={Droplet}
-        title="During Pregnancy"
+        title="Pregnancy Journey"
         subtitle="Track, learn and feel supported"
-        onPress={() => navigateToDetail("During Pregnancy", "Track, learn and feel supported")}
+        onPress={() => navigateToDetail("Pregnancy Journey", "Track, learn and feel supported")}
       />
       <ExploreMenuItem
         icon={Heart}
@@ -38,6 +38,7 @@ export default function PregnancyScreen() {
         subtitle="Evidence-based information"
         onPress={() => navigateToDetail("Resources", "Evidence-based information")}
       />
+
     </ExploreLayout>
   );
 }

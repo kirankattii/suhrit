@@ -12,3 +12,8 @@ const response = await client.chat.completions.create({
   messages: [{ role: "user", content: "Hello from my product" }]
 });
 console.log(response.choices[0].message.content);
+
+
+
+
+ci_live_4d64a7384ae2ca2f5a6878d647417e310d514455b3bac7de
