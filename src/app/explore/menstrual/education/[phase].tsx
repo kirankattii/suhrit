@@ -336,7 +336,7 @@ export default function PhaseDetailScreen() {
             </View>
 
             <Text className="text-[#1E293B] font-bold text-[18px] mb-4">
-              Yoga Asanas (Options)
+              Yoga Asanas
             </Text>
             <View className="flex-row flex-wrap justify-between mb-8">
               {data.activity.yoga.map((asana: any, i: number) => (
@@ -353,7 +353,7 @@ export default function PhaseDetailScreen() {
             </View>
 
             <Text className="text-[#1E293B] font-bold text-[18px] mb-4">
-              Breathing Practices (Options)
+              Breathing Practices
             </Text>
             <View className="flex-row flex-wrap justify-between">
               {data.activity.breathing.map((breath: any, i: number) => (
@@ -378,10 +378,10 @@ export default function PhaseDetailScreen() {
       scroll={false}
       header={
         <View>
-          <View className="pt-1 pb-2">
+          <View className="pt-2 pb-2 relative flex-row items-center justify-center">
             <TouchableOpacity
               onPress={() => router.back()}
-              className="w-12 h-12 p-3 pl-5 z-10 absolute top-1 left-0"
+              className="w-12 h-12 justify-center pl-5 z-10 absolute left-0"
             >
               <ChevronLeft color="#FFFFFF" size={28} />
             </TouchableOpacity>
@@ -389,17 +389,17 @@ export default function PhaseDetailScreen() {
             <View className="flex-row items-center justify-center mt-2 mb-4">
               <View className="mr-3">
                 <View className="items-center justify-center relative">
-                  <View className="w-8 h-10 absolute bottom-0 left-0 right-0 items-center">
-                    <Icon color={data.color} size={48} fill={data.color} />
+                  <View className="w-8 h-10 absolute bottom-0 left-0 right-0 items-center justify-end">
+                    <Icon color={data.color} size={40} fill={data.color} />
                   </View>
-                  <View className="w-12 h-12" />
+                  <View className="w-10 h-10" />
                 </View>
               </View>
               <View>
-                <Text className="text-white font-bold text-[20px] mb-1">
+                <Text className="text-white font-bold text-[18px] mb-0.5">
                   {data.title}
                 </Text>
-                <Text className="text-[#8B9CBE] text-[14px]">
+                <Text className="text-[#8B9CBE] text-[13px]">
                   {data.subtitle}
                 </Text>
               </View>

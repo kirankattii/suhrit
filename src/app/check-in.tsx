@@ -224,11 +224,13 @@ export default function CheckInScreen() {
       footer={<Button title="Save Check-in" onPress={handleSave} loading={loading} />}
     >
       <View className="px-6 pt-8">
-        <TouchableOpacity onPress={() => router.back()} className="-ml-2 mb-6 w-10 p-2">
-          <ChevronLeft color="#183059" size={28} />
-        </TouchableOpacity>
+        <View className="flex-row items-center mb-6">
+          <TouchableOpacity onPress={() => router.back()} className="-ml-2 p-2 mr-1">
+            <ChevronLeft color="#183059" size={28} />
+          </TouchableOpacity>
+          <Text className="text-[26px] leading-[32px] font-bold text-suhrhit-text">How are you doing today?</Text>
+        </View>
 
-        <Heading className="mb-2">How are you doing today?</Heading>
         <Text className="mb-8 text-[14px] text-suhrhit-muted">
           Take a moment to reflect on your day.
         </Text>

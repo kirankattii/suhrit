@@ -77,7 +77,6 @@ export default function CircularProgress({
           fill="#FFFFFF" 
           stroke="#0A1128"
           strokeWidth={2}
-          style={{ shadowColor: "#000", shadowOpacity: 0.5, shadowRadius: 5 }}
         />
         <Circle 
           cx={thumbX} 
