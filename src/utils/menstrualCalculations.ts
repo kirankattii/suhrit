@@ -10,11 +10,11 @@ export interface CycleInfo {
 export function getCycleInfo(lastPeriodStart: Date): CycleInfo {
   const today = new Date();
   
-  // Normalize times to midnight to avoid time-of-day differences
-  const normalizedToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  const normalizedLMP = new Date(lastPeriodStart.getFullYear(), lastPeriodStart.getMonth(), lastPeriodStart.getDate());
+  // Normalize times to midnight UTC to avoid time-of-day and DST differences
+  const normalizedToday = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+  const normalizedLMP = Date.UTC(lastPeriodStart.getFullYear(), lastPeriodStart.getMonth(), lastPeriodStart.getDate());
   
-  const diffTime = Math.abs(normalizedToday.getTime() - normalizedLMP.getTime());
+  const diffTime = Math.abs(normalizedToday - normalizedLMP);
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   
   // Base 28-day cycle calculation

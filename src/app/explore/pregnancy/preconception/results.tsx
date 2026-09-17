@@ -115,20 +115,6 @@ export default function CheckInResultsScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity 
-          className="bg-white rounded-[20px] p-4 flex-row items-center mb-3 border border-[#F0F0F0] shadow-sm"
-          onPress={() => router.push("/explore")} // Mock for Save My Results or Learn More
-        >
-          <View className="w-12 h-12 rounded-full bg-[#FFF3E0] items-center justify-center mr-4">
-            <BookOpen color="#FF9800" size={24} />
-          </View>
-          <View className="flex-1">
-            <Text className="text-suhrhit-primary font-bold text-[15px] mb-1">Learn More</Text>
-            <Text className="text-suhrhit-secondary text-[13px]">Read trusted articles and resources on preconception health.</Text>
-          </View>
-          <ChevronRight color="#CBD5E1" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity 
           className="bg-white rounded-[20px] p-4 flex-row items-center mb-10 border border-[#F0F0F0] shadow-sm"
           onPress={() => router.push("/explore/professional")}
         >

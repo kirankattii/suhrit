@@ -48,10 +48,7 @@ export default function ProgressScreen() {
 
   return (
     <Screen scroll bottomBar={<BottomTabBar />}>
-      <View className="px-6 pt-8 pb-12">
-        <TouchableOpacity onPress={() => router.back()} className="-ml-2 mb-6 w-10 p-2">
-          <ChevronLeft color="#183059" size={28} />
-        </TouchableOpacity>
+      <View className="px-6 pt-12 pb-12">
 
         <Heading className="mb-2">My Progress</Heading>
         <Text className="mb-8 text-[14px] text-suhrhit-muted">

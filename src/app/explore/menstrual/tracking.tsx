@@ -142,23 +142,26 @@ export default function CycleTrackingScreen() {
               </>
             )}
             
-            {/* Legend */}
-            <View className="flex-row flex-wrap justify-center mt-8 mb-8 gap-4 px-2 w-full">
-              <View className="flex-row items-center">
-                <View className="w-3 h-3 rounded-full bg-[#FF8FA3] mr-2" />
-                <Text className="text-[#8B9CBE] text-[12px]">Menstrual</Text>
+            {/* Linear Visual Flow */}
+            <View className="flex-row items-center justify-center mt-8 mb-8 w-full px-2">
+              <View className="items-center">
+                <View className={`w-3 h-3 rounded-full mb-2 ${cycleInfo.currentPhase === 'Menstrual' ? 'bg-[#FF8FA3]' : 'bg-[#1E335A]'}`} />
+                <Text className={`text-[11px] font-bold ${cycleInfo.currentPhase === 'Menstrual' ? 'text-[#FF8FA3]' : 'text-[#8B9CBE]'}`}>Menstrual</Text>
               </View>
-              <View className="flex-row items-center">
-                <View className="w-3 h-3 rounded-full bg-[#A7E3A1] mr-2" />
-                <Text className="text-[#8B9CBE] text-[12px]">Follicular</Text>
+              <View className="h-[2px] w-6 bg-[#1E335A] mx-1 mb-6" />
+              <View className="items-center">
+                <View className={`w-3 h-3 rounded-full mb-2 ${cycleInfo.currentPhase === 'Follicular' ? 'bg-[#A7E3A1]' : 'bg-[#1E335A]'}`} />
+                <Text className={`text-[11px] font-bold ${cycleInfo.currentPhase === 'Follicular' ? 'text-[#A7E3A1]' : 'text-[#8B9CBE]'}`}>Follicular</Text>
               </View>
-              <View className="flex-row items-center">
-                <View className="w-3 h-3 rounded-full bg-[#F9E076] mr-2" />
-                <Text className="text-[#8B9CBE] text-[12px]">Ovulation</Text>
+              <View className="h-[2px] w-6 bg-[#1E335A] mx-1 mb-6" />
+              <View className="items-center">
+                <View className={`w-3 h-3 rounded-full mb-2 ${cycleInfo.currentPhase === 'Ovulation' ? 'bg-[#F9E076]' : 'bg-[#1E335A]'}`} />
+                <Text className={`text-[11px] font-bold ${cycleInfo.currentPhase === 'Ovulation' ? 'text-[#F9E076]' : 'text-[#8B9CBE]'}`}>Ovulation</Text>
               </View>
-              <View className="flex-row items-center">
-                <View className="w-3 h-3 rounded-full bg-[#CBA6F7] mr-2" />
-                <Text className="text-[#8B9CBE] text-[12px]">Luteal</Text>
+              <View className="h-[2px] w-6 bg-[#1E335A] mx-1 mb-6" />
+              <View className="items-center">
+                <View className={`w-3 h-3 rounded-full mb-2 ${cycleInfo.currentPhase === 'Luteal' ? 'bg-[#CBA6F7]' : 'bg-[#1E335A]'}`} />
+                <Text className={`text-[11px] font-bold ${cycleInfo.currentPhase === 'Luteal' ? 'text-[#CBA6F7]' : 'text-[#8B9CBE]'}`}>Luteal</Text>
               </View>
             </View>
 

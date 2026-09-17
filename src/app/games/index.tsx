@@ -70,24 +70,42 @@ export default function GamesScreen() {
             </View>
           </TouchableOpacity>
 
-          {/* Game 2: Placeholder */}
-          <View 
-            className="bg-[#F5F9FF] rounded-[32px] p-6 border border-[#E6F0FA] opacity-80"
+          {/* Game 2: Gratitude Tree */}
+          <TouchableOpacity 
+            onPress={() => router.push("/games/gratitude-tree")} 
+            className="bg-[#E8F3E9] rounded-[32px] p-6 border border-[#CDE5D0]"
+            style={{ 
+              shadowColor: "#2E5C31", 
+              shadowOffset: { width: 0, height: 8 }, 
+              shadowOpacity: 0.04, 
+              shadowRadius: 16, 
+              elevation: 4 
+            }}
+            activeOpacity={0.8}
           >
             <View className="flex-row items-center justify-between mb-4">
-              <View className="bg-white w-16 h-16 rounded-[20px] items-center justify-center shadow-sm border border-[#E6F0FA]">
-                <BrainCircuit color="#7293B3" size={32} strokeWidth={2} />
+              <View className="bg-white w-16 h-16 rounded-[20px] items-center justify-center shadow-sm border border-[#CDE5D0]">
+                <Sparkles color="#4A7B4D" size={32} strokeWidth={2} />
               </View>
-              <View className="bg-white border border-[#E6F0FA] rounded-full px-4 py-2">
-                <Text className="text-suhrhit-secondary font-bold text-[12px]">COMING SOON</Text>
+              <View className="bg-[#4A7B4D] rounded-full w-10 h-10 items-center justify-center">
+                <ArrowRight color="white" size={20} strokeWidth={2.5} />
               </View>
             </View>
             
-            <Text className="text-suhrhit-primary font-bold text-[22px] mb-2 text-opacity-70">Mindful Maze</Text>
-            <Text className="text-suhrhit-secondary text-[15px] leading-[22px]">
-              Navigate through challenging emotions in a calm, focused puzzle environment.
+            <Text className="text-[#2E5C31] font-bold text-[22px] mb-2">Gratitude Tree</Text>
+            <Text className="text-[#4A7B4D] text-[15px] leading-[22px] mb-4">
+              Cultivate a positive mindset by growing your own beautiful tree through daily gratitude.
             </Text>
-          </View>
+
+            <View className="flex-row items-center gap-2">
+              <View className="bg-white/80 px-3 py-1.5 rounded-full border border-[#CDE5D0]">
+                <Text className="text-[#2E5C31] text-[12px] font-semibold">Daily Journal</Text>
+              </View>
+              <View className="bg-white/80 px-3 py-1.5 rounded-full border border-[#CDE5D0]">
+                <Text className="text-[#2E5C31] text-[12px] font-semibold">2 mins</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
           
         </View>
       </ScrollView>

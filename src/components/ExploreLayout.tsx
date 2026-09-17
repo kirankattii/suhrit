@@ -46,18 +46,21 @@ export default function ExploreLayout({ title, subtitle, imageSource, children }
 
   return (
     <View className="flex-1 bg-suhrhit-background">
+      {/* Sticky Header */}
+      <View style={{ paddingTop: Math.max(insets.top, 10) + 8 }} className="px-6 pb-4 bg-suhrhit-background z-50">
+        <View className="flex-row items-center justify-between">
+          <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 items-start justify-center">
+            <ChevronLeft color="#183059" size={28} strokeWidth={2.5} />
+          </TouchableOpacity>
+          <Text className="text-suhrhit-primary text-[20px] font-medium text-center absolute w-full -z-10" style={{ fontFamily: 'Georgia' }}>
+            {title}
+          </Text>
+          <View className="w-10 h-10" />
+        </View>
+      </View>
+
       <ScrollView className="flex-1" bounces={false} showsVerticalScrollIndicator={false}>
-        <View style={{ paddingTop: Math.max(insets.top, 20) + 16 }} className="px-6 pb-6">
-          {/* Header */}
-          <View className="flex-row items-center justify-between z-10 mb-6">
-            <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 items-start justify-center">
-              <ChevronLeft color="#183059" size={28} strokeWidth={2.5} />
-            </TouchableOpacity>
-            <Text className="text-suhrhit-primary text-[20px] font-medium text-center absolute w-full -z-10" style={{ fontFamily: 'Georgia' }}>
-              {title}
-            </Text>
-            <View className="w-10 h-10" />
-          </View>
+        <View className="px-6 pb-6 pt-4">
 
           {/* Illustration */}
           <View className="items-center mb-6 overflow-hidden rounded-[32px]">

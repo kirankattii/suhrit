@@ -30,7 +30,7 @@ export default function PregnancyScreen() {
         icon={Heart}
         title="Postpartum"
         subtitle="Your recovery matters"
-        onPress={() => navigateToDetail("Postpartum", "Your recovery matters")}
+        onPress={() => router.push("/explore/postpartum")}
       />
       <ExploreMenuItem
         icon={Book}
