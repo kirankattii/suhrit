@@ -5,6 +5,7 @@ import ResultScreen from "../../../components/relationships/ResultScreen";
 import IssueSelectionScreen, { IssueOption } from "../../../components/relationships/IssueSelectionScreen";
 import InsightSolutionScreen from "../../../components/relationships/InsightSolutionScreen";
 import { Heart, MessageCircle, ShieldAlert, HeartHandshake, Lock, Activity, ShieldX, Unlock, HelpCircle } from "lucide-react-native";
+import { saveRelationshipResult } from "../../../storage/relationships";
 
 const RAS_QUESTIONS: Question[] = [
   { id: "1", text: "How often does your partner meet your needs?", scale: 5, options: ["Very Poor", "Poor", "Average", "Well", "Extremely well"] },
@@ -35,8 +36,19 @@ export default function RomanticScreen() {
   const [score, setScore] = useState(0);
   const [selectedIssueId, setSelectedIssueId] = useState<string | null>(null);
 
-  const handleTestComplete = (totalScore: number) => {
+  const handleTestComplete = async (totalScore: number) => {
     setScore(totalScore);
+    
+    let bandLabel = "";
+    if (totalScore <= 17) {
+      bandLabel = "Lower relationship satisfaction";
+    } else if (totalScore <= 24) {
+      bandLabel = "Moderate relationship satisfaction";
+    } else {
+      bandLabel = "Higher relationship satisfaction";
+    }
+    
+    await saveRelationshipResult('romantic', totalScore, 35, bandLabel);
     setStep("result");
   };
 

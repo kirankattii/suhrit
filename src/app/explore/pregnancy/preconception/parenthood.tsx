@@ -10,12 +10,12 @@ export default function ParenthoodScreen() {
     <View className="flex-1 bg-white" style={{ paddingTop: insets.top }}>
       {/* Header */}
       <View className="px-6 py-4 flex-row items-center justify-between border-b border-[#F0F0F0]">
-        <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 justify-center">
-          <ChevronLeft color="#183059" size={28} />
-        </TouchableOpacity>
-        <Text className="text-suhrhit-primary font-medium text-[18px] absolute w-full text-center -z-10" style={{ fontFamily: 'Georgia' }}>
+        <Text pointerEvents="none" className="text-suhrhit-primary font-medium text-[18px] absolute left-0 right-0 text-center" style={{ fontFamily: 'Georgia' }}>
           Preparing for Parenthood
         </Text>
+        <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 justify-center z-10">
+          <ChevronLeft color="#183059" size={28} />
+        </TouchableOpacity>
         <View className="w-10 h-10" />
       </View>
 

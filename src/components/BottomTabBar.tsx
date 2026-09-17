@@ -1,12 +1,5 @@
 import { router, usePathname } from "expo-router";
-import {
-  Bot,
-  Brain,
-  Gamepad2,
-  Home,
-  Sprout,
-  UserRound,
-} from "lucide-react-native";
+import { Bot, Gamepad2, Home, Sprout, UserRound } from "lucide-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -38,14 +31,8 @@ export default function BottomTabBar() {
           icon: Sprout,
           active: isInsights,
         },
-        {
-          label: "Mind",
-          route: "/mind",
-          icon: Brain,
-          active: pathname.startsWith("/mind"),
-        },
-        { label: "Unwind", route: "/games", icon: Gamepad2, active: isGames },
         { label: "AI", route: "/chat", icon: Bot, active: isChat },
+        { label: "Unwind", route: "/games", icon: Gamepad2, active: isGames },
         {
           label: "Profile",
           route: "/profile?edit=true",
@@ -54,11 +41,34 @@ export default function BottomTabBar() {
         },
       ].map((tab, index) => {
         const Icon = tab.icon;
+        const isAI = tab.label === "AI";
+
+        if (isAI) {
+          return (
+            <TouchableOpacity
+              key={index}
+              activeOpacity={0.9}
+              onPress={() => router.push(tab.route as any)}
+              className="items-center flex-1"
+            >
+              <View className="absolute -top-[24px] w-[50px] h-[50px] rounded-full items-center justify-center bg-suhrhit-primary">
+                <Icon color="white" size={26} strokeWidth={2.5} />
+              </View>
+              <View className="h-[24px]" />
+              <Text
+                className={`${tab.active ? "text-suhrhit-primary font-bold" : "text-suhrhit-secondary font-medium"} text-[10px] mt-1`}
+              >
+                {tab.label}
+              </Text>
+            </TouchableOpacity>
+          );
+        }
+
         return (
           <TouchableOpacity
             key={index}
             onPress={() => router.push(tab.route as any)}
-            className="items-center"
+            className="items-center flex-1"
           >
             <Icon
               color={tab.active ? "#183059" : "#7293B3"}

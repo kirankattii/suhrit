@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { ChevronLeft, TrendingUp } from "lucide-react-native";
+import { ChevronLeft, ChevronRight, TrendingUp } from "lucide-react-native";
 import { useEffect, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
@@ -14,20 +14,24 @@ import {
   getPreconceptionHistory,
   PreconceptionResult
 } from "../storage/wellbeing";
+import { getRelationshipHistory, RelationshipResult } from "../storage/relationships";
 
 export default function ProgressScreen() {
   const [who5History, setWho5History] = useState<WHO5Result[]>([]);
   const [checkinHistory, setCheckinHistory] = useState<DailyCheckin[]>([]);
   const [preconceptionHistory, setPreconceptionHistory] = useState<PreconceptionResult[]>([]);
+  const [relationshipHistory, setRelationshipHistory] = useState<RelationshipResult[]>([]);
 
   useEffect(() => {
     const loadData = async () => {
       const w5 = await getWHO5History();
       const ci = await getDailyCheckins();
       const pc = await getPreconceptionHistory();
+      const rel = await getRelationshipHistory();
       setWho5History(w5.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
       setCheckinHistory(ci.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
       setPreconceptionHistory(pc.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
+      setRelationshipHistory(rel.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
     };
     loadData();
   }, []);
@@ -118,13 +122,69 @@ export default function ProgressScreen() {
               <Text className="font-semibold text-suhrhit-primary text-[13px]">Flagged Areas</Text>
             </View>
             {preconceptionHistory.map((item, idx) => (
-              <View key={item.id} className={`flex-row p-4 items-center ${idx !== preconceptionHistory.length - 1 ? 'border-b border-suhrhit-border/40' : ''}`}>
+              <TouchableOpacity 
+                key={item.id} 
+                className={`flex-row p-4 items-center ${idx !== preconceptionHistory.length - 1 ? 'border-b border-suhrhit-border/40' : ''}`}
+                onPress={() => router.push({
+                  pathname: "/explore/pregnancy/preconception/results",
+                  params: { answersData: JSON.stringify(item.answers) }
+                })}
+              >
                 <Text className="flex-1 text-suhrhit-text font-medium text-[14px]">{formatDate(item.date)}</Text>
-                <View className="bg-[#FFB6C1]/30 px-3 py-1 rounded-full">
+                <View className="bg-[#FFB6C1]/30 px-3 py-1 rounded-full mr-2">
                   <Text className="text-suhrhit-primary font-bold">{item.score} / {item.total}</Text>
                 </View>
-              </View>
+                <ChevronRight color="#CBD5E1" size={20} />
+              </TouchableOpacity>
             ))}
+          </View>
+        )}
+
+        <View className="flex-row items-center justify-between mb-4">
+          <SubHeading>Relationship Assessments</SubHeading>
+          <TrendingUp color="#7293B3" size={20} />
+        </View>
+
+        {relationshipHistory.length === 0 ? (
+          <View className="bg-suhrhit-background border border-suhrhit-border/50 p-6 rounded-2xl items-center mb-8">
+            <Text className="text-suhrhit-muted text-[14px] text-center mb-4">
+              You haven't completed any Relationship assessments yet.
+            </Text>
+            <TouchableOpacity onPress={() => router.push("/explore/relationships")} className="bg-[#183059] px-4 py-2 rounded-full">
+              <Text className="text-white font-bold text-[13px]">Explore Relationships</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View className="bg-white rounded-3xl border border-suhrhit-border overflow-hidden mb-8">
+            <View className="flex-row bg-[#F0F5FA] p-4 border-b border-[#D6E4F0]">
+              <Text className="flex-1 font-semibold text-suhrhit-primary text-[13px]">Date & Type</Text>
+              <Text className="font-semibold text-suhrhit-primary text-[13px]">Score</Text>
+            </View>
+            {relationshipHistory.map((item, idx) => {
+              let testName = item.type as string;
+              if (item.type === 'mspss') testName = 'Social Support';
+              if (item.type === 'family') testName = 'Family Support';
+              if (item.type === 'friends') testName = 'Friendship';
+              if (item.type === 'romantic') testName = 'Romantic';
+              
+              return (
+                <View 
+                  key={item.id} 
+                  className={`flex-row p-4 items-center ${idx !== relationshipHistory.length - 1 ? 'border-b border-suhrhit-border/40' : ''}`}
+                >
+                  <View className="flex-1">
+                    <Text className="text-suhrhit-text font-medium text-[14px]">{formatDate(item.date)}</Text>
+                    <Text className="text-suhrhit-muted text-[12px] uppercase mt-1 tracking-wider">{testName}</Text>
+                  </View>
+                  <View className="items-end justify-center w-[120px]">
+                    <View className="bg-[#F0F5FA] px-3 py-1 rounded-full mb-1">
+                      <Text className="text-suhrhit-primary font-bold">{item.score} / {item.maxScore}</Text>
+                    </View>
+                    <Text className="text-[#7293B3] text-[10px] font-medium text-right">{item.bandLabel}</Text>
+                  </View>
+                </View>
+              );
+            })}
           </View>
         )}
 

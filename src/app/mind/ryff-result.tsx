@@ -1,6 +1,9 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { ChevronLeft } from "lucide-react-native";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { useEffect, useState } from "react";
+import { View, Text, TouchableOpacity, ScrollView, ActivityIndicator } from "react-native";
+
+import { generateInsight } from "../../ai/client";
 
 import Button from "../../components/Button";
 import Screen from "../../components/Screen";
@@ -43,6 +46,30 @@ export default function RyffResultScreen() {
 
   const result = JSON.parse(decodeURIComponent(resultParam)) as RyffResult;
 
+  const [aiFeedback, setAiFeedback] = useState<string | null>(null);
+  const [loadingFeedback, setLoadingFeedback] = useState(true);
+
+  useEffect(() => {
+    async function fetchFeedback() {
+      const prompt = `
+You are an empathetic, professional psychological counselor analyzing a user's results from the Ryff Scale of Psychological Wellbeing. 
+The user's scores across 6 dimensions are (max 21 for each):
+- Autonomy: ${result.autonomy}
+- Environmental Mastery: ${result.environmentalMastery}
+- Personal Growth: ${result.personalGrowth}
+- Positive Relations: ${result.positiveRelations}
+- Purpose in Life: ${result.purposeInLife}
+- Self-Acceptance: ${result.selfAcceptance}
+
+Provide a short, supportive, and personalized paragraph summarizing their strengths and one area where they might gently focus on improving. Be warm and encouraging. Do not use markdown bullet points, just write 3-4 flowing sentences.
+`;
+      const feedback = await generateInsight(prompt);
+      setAiFeedback(feedback || "I'm sorry, but I couldn't generate personalized feedback right now. Please try again later.");
+      setLoadingFeedback(false);
+    }
+    fetchFeedback();
+  }, []);
+
   return (
     <Screen scroll>
       <View className="px-6 pt-8 pb-12">
@@ -64,6 +91,21 @@ export default function RyffResultScreen() {
           <ScoreBar label="Positive Relations" score={result.positiveRelations} color="#E91E63" />
           <ScoreBar label="Purpose in Life" score={result.purposeInLife} color="#2196F3" />
           <ScoreBar label="Self-Acceptance" score={result.selfAcceptance} color="#00BCD4" />
+        </View>
+
+        {/* AI Feedback Section */}
+        <View className="bg-[#F3E8FF] rounded-3xl p-6 shadow-sm border border-[#E9D5FF] mb-8">
+          <Text className="text-[#6B21A8] font-bold text-[18px] mb-3">AI Insights</Text>
+          {loadingFeedback ? (
+            <View className="py-4 items-center justify-center">
+              <ActivityIndicator size="small" color="#9333EA" />
+              <Text className="text-[#9333EA] mt-2 text-[13px]">Analyzing your wellbeing profile...</Text>
+            </View>
+          ) : (
+            <Text className="text-[#581C87] text-[15px] leading-[24px]">
+              {aiFeedback}
+            </Text>
+          )}
         </View>
 
         <Button title="Done" onPress={() => router.push("/mind")} />

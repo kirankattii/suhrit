@@ -1,721 +1,717 @@
-
-
 <!-- Start of picture text -->
+
 Men str ualCycle<br><!-- End of picture text -->
 
-1.CYCLETRACKING 
+1.CYCLETRACKING
 
-# UserInput 
+# UserInput
 
-Ask: 
+Ask:
 
->Whenwasthefirstdayofyourlastmenstrualperiod? Usetheentereddatetoestimate: 
+> Whenwasthefirstdayofyourlastmenstrualperiod? Usetheentereddatetoestimate:
 
-Currentcycleday 
+Currentcycleday
 
-Currentmenstrualphase 
+Currentmenstrualphase
 
-Display 
+Display
 
->CycleDay:XX 
+> CycleDay:XX
 
->CurrentPhase:Menstrual/Follicular/Ovulation/Luteal Displaythefourphasesvisually: 
+> CurrentPhase:Menstrual/Follicular/Ovulation/Luteal Displaythefourphasesvisually:
 
-Menstrual →Follicular→ Ovulation →Luteal 
+Menstrual →Follicular→ Ovulation →Luteal
 
-2.SYMPTOMS&PATTERNS 
+2.SYMPTOMS&PATTERNS
 
-Thissectionshouldcontaintwocomponents. 
+Thissectionshouldcontaintwocomponents.
 
-2.1Emotional&PhysicalAssessment 
+2.1Emotional&PhysicalAssessment
 
-Heading 
+Heading
 
->UnderstandYourCycle 
+> UnderstandYourCycle
 
-Instruction 
+Instruction
 
->Takeashortassessmenttounderstandyouremotionalandphysical 
+> Takeashortassessmenttounderstandyouremotionalandphysical
 
-experiencesassociatedwithyourmenstrualcycle. UsetheselectedJ-DRSPShortFormquestionnairewithoutchanging itsvalidatedwordingorscoringsystem. 
+experiencesassociatedwithyourmenstrualcycle. UsetheselectedJ-DRSPShortFormquestionnairewithoutchanging itsvalidatedwordingorscoringsystem.
 
-Theresultsshouldbedisplayedundertwocategories: 
+Theresultsshouldbedisplayedundertwocategories:
 
-Emotional/PsychologicalSymptoms 
+Emotional/PsychologicalSymptoms
 
-Displaytheuser'scalculatedresultforemotionalsymptoms. PhysicalSymptoms 
+Displaytheuser'scalculatedresultforemotionalsymptoms. PhysicalSymptoms
 
-Displaytheuser'scalculatedresultforphysicalsymptoms. Interpretation 
+Displaytheuser'scalculatedresultforphysicalsymptoms. Interpretation
 
-Showashort,supportiveinterpretationbasedontheuser'sscore. Donotdiagnosetheuser. 
+Showashort,supportiveinterpretationbasedontheuser'sscore. Donotdiagnosetheuser.
 
-Avoidstatementssuchas: 
+Avoidstatementssuchas:
 
-> “YouhavePMS.” 
+> “YouhavePMS.”
 
-> “Youhaveahormonalimbalance.” 
+> “Youhaveahormonalimbalance.”
 
-Insteaduselanguagesuchas: 
+Insteaduselanguagesuchas:
 
-> “Yourresponsessuggestthatyouhaveexperiencedsome 
+> “Yourresponsessuggestthatyouhaveexperiencedsome
 
-emotionalchangesaroundyourmenstrualcycle.” 
+emotionalchangesaroundyourmenstrualcycle.”
 
-or 
+or
 
-> “Yourresponsesindicaterelativelyfewsymptomsatthistime.” Theinterpretationshouldencouragetheusertoobservepatterns acrossmultiplecycles. 
+> “Yourresponsesindicaterelativelyfewsymptomsatthistime.” Theinterpretationshouldencouragetheusertoobservepatterns acrossmultiplecycles.
 
-# 2.2ADDITIONALSYMPTOMS 
+# 2.2ADDITIONALSYMPTOMS
 
-Addasmalloption: 
+Addasmalloption:
 
-＋AddSymptoms 
+＋AddSymptoms
 
-Thisshouldopenalistofadditionalsymptoms. 
+Thisshouldopenalistofadditionalsymptoms.
 
-PhysicalSymptoms 
+PhysicalSymptoms
 
-Abdominalcramps/pelvicpain 
+Abdominalcramps/pelvicpain
 
-Backache 
+Backache
 
-Paininthighs 
+Paininthighs
 
-Dizziness/feelingfaint 
+Dizziness/feelingfaint
 
-Nausea 
+Nausea
 
-Constipation 
+Constipation
 
-Diarrhea/loosestools 
+Diarrhea/loosestools
 
-Appetitechanges/foodcravings 
+Appetitechanges/foodcravings
 
-Acne/skinbreakouts 
+Acne/skinbreakouts
 
-Oilyskin 
+Oilyskin
 
-Swelling/puffiness 
+Swelling/puffiness
 
-Feelingunusuallyheavy 
+Feelingunusuallyheavy
 
-Theusercanselectmultiplesymptoms. 
+Theusercanselectmultiplesymptoms.
 
-Theselectedsymptomsshouldbesavedandmadeavailabletothe PersonalisedTipssystem. 
+Theselectedsymptomsshouldbesavedandmadeavailabletothe PersonalisedTipssystem.
 
---- 
+---
 
-3.CYCLEEDUCATION 
+3.CYCLEEDUCATION
 
-Createfourseparateinterfaces: 
+Createfourseparateinterfaces:
 
-# 🩸 MenstrualPhase 
+# 🩸 MenstrualPhase
 
-🌱 FollicularPhase 
+🌱 FollicularPhase
 
-✨OvulationPhase 
+✨OvulationPhase
 
-🌙 LutealPhase Eachphaseshouldcontain: 
+🌙 LutealPhase Eachphaseshouldcontain:
 
-1.Whathappens 
+1.Whathappens
 
-2.Howlongitgenerallylasts 
+2.Howlongitgenerallylasts
 
-3.Food&Nutrition 
+3.Food&Nutrition
 
-4.Activity&Yoga 
+4.Activity&Yoga
 
-3.1MENSTRUALPHASE 
+3.1MENSTRUALPHASE
 
-WhatHappens 
+WhatHappens
 
-Explainbriefly: 
+Explainbriefly:
 
-Menstrualbleedingoccurs. 
+Menstrualbleedingoccurs.
 
-Theuterineliningisshed. 
+Theuterineliningisshed.
 
-Cramps,fatigue,headache,bloatingandbodydiscomfortmayoccur. Experiencesvarybetweenwomen. 
+Cramps,fatigue,headache,bloatingandbodydiscomfortmayoccur. Experiencesvarybetweenwomen.
 
-Duration: 
+Duration:
 
->Thisisthephasewhenyouexperiencemenstrualbleeding. Donotgiveafixednumberofdaysasauniversalrule. 
+> Thisisthephasewhenyouexperiencemenstrualbleeding. Donotgiveafixednumberofdaysasauniversalrule.
 
-Food&Nutrition 
+Food&Nutrition
 
-Highlight: 
+Highlight:
 
-# IRON 
+# IRON
 
-Displayfoodsources. 
+Displayfoodsources.
 
-Vegetarian 
+Vegetarian
 
-Greenleafyvegetables 
+Greenleafyvegetables
 
-Dal 
+Dal
 
-Chana 
+Chana
 
-Rajma 
+Rajma
 
-Pulses 
+Pulses
 
-Sesameseeds 
+Sesameseeds
 
-Nuts 
+Nuts
 
-Dryfruits 
+Dryfruits
 
-Non-vegetarian 
+Non-vegetarian
 
-Meat Fish 
+Meat Fish
 
-Chicken 
+Chicken
 
-Eggs 
+Eggs
 
-Alsomentionvitamin-C-richfoodsashelpfulforabsorptionof plant-basediron. 
+Alsomentionvitamin-C-richfoodsashelpfulforabsorptionof plant-basediron.
 
-**Activity&Yoga** 
+**Activity&Yoga**
 
-Generaloptions: 
+Generaloptions:
 
-Gentlewalking 
+Gentlewalking
 
-Lightstretching 
+Lightstretching
 
-# Gentleyoga 
+# Gentleyoga
 
-Restwhenrequired 
+Restwhenrequired
 
-YogaOptions 
+YogaOptions
 
-Balasana— Child'sPose 
+Balasana— Child'sPose
 
-Cat–Cow 
+Cat–Cow
 
-SuptaBaddhaKonasana 
+SuptaBaddhaKonasana
 
-Gentlesupinetwist 
+Gentlesupinetwist
 
-Shavasana 
+Shavasana
 
-BreathingOptions 
+BreathingOptions
 
-Slowdiaphragmaticbreathing 
+Slowdiaphragmaticbreathing
 
-NadiShodhana 
+NadiShodhana
 
-Gentlerelaxationbreathing 
+Gentlerelaxationbreathing
 
-3.2FOLLICULARPHASE 
+3.2FOLLICULARPHASE
 
-WhatHappens 
+WhatHappens
 
-Explainbriefly: 
+Explainbriefly:
 
-Thisphasefollowsthebeginningofmenstruationandcontinues towardsovulation. 
+Thisphasefollowsthebeginningofmenstruationandcontinues towardsovulation.
 
-Ovarianfolliclesdevelop. 
+Ovarianfolliclesdevelop.
 
-Hormonalchangesoccur. 
+Hormonalchangesoccur.
 
-Somewomenmaynoticeincreasingenergyasthephaseprogresses. 
+Somewomenmaynoticeincreasingenergyasthephaseprogresses.
 
-# Donottelltheuserthatshewilldefinitelyfeelmoreenergetic. 
+# Donottelltheuserthatshewilldefinitelyfeelmoreenergetic.
 
-Duration: 
+Duration:
 
->Thisphaseoccursaftermenstruationandcontinuesuntilovulation. 
+> Thisphaseoccursaftermenstruationandcontinuesuntilovulation.
 
-Thedurationshouldbepresentedasvariable. 
+Thedurationshouldbepresentedasvariable.
 
-Food&Nutrition 
+Food&Nutrition
 
-Focusonabalanceddietcontaining: 
+Focusonabalanceddietcontaining:
 
-Protein 
+Protein
 
-Wholegrains/millets 
+Wholegrains/millets
 
-Pulses 
+Pulses
 
-Vegetables 
+Vegetables
 
-Fruits 
+Fruits
 
-Nutsandseeds 
+Nutsandseeds
 
-Healthyfats 
+Healthyfats
 
-Adequatefluids 
+Adequatefluids
 
-IndianFoodExamples 
+IndianFoodExamples
 
-Protein 
+Protein
 
-Dal 
+Dal
 
-Chana 
+Chana
 
-Rajma 
+Rajma
 
-Paneer 
+Paneer
 
-Curd 
+Curd
 
-Eggs 
+Eggs
 
-# Fish 
+# Fish
 
-Chicken 
+Chicken
 
-Wholegrains/millets 
+Wholegrains/millets
 
-Ragi 
+Ragi
 
-Jowar 
+Jowar
 
-Bajra 
+Bajra
 
-Wholewheat 
+Wholewheat
 
-Oats 
+Oats
 
-Healthyfats 
+Healthyfats
 
-Groundnuts 
+Groundnuts
 
-Sesame 
+Sesame
 
-Flax/chiaseeds 
+Flax/chiaseeds
 
-Nuts 
+Nuts
 
-Activity&Yoga 
+Activity&Yoga
 
-Iftheuserfeelsenergetic,generaloptionscaninclude: Walking 
+Iftheuserfeelsenergetic,generaloptionscaninclude: Walking
 
-Yoga 
+Yoga
 
-Strengthtraining 
+Strengthtraining
 
-# Aerobicexercise 
+# Aerobicexercise
 
-Dancing 
+Dancing
 
-Normalphysicalactivity 
+Normalphysicalactivity
 
-YogaOptions 
+YogaOptions
 
-# SuryaNamaskar 
+# SuryaNamaskar
 
-VirabhadrasanaI&II 
+VirabhadrasanaI&II
 
-Trikonasana 
+Trikonasana
 
-Vrikshasana 
+Vrikshasana
 
-SetuBandhasana 
+SetuBandhasana
 
-Breathing 
+Breathing
 
-NadiShodhana 
+NadiShodhana
 
-Bhramari 
+Bhramari
 
-Slowbreathing 
+Slowbreathing
 
-3.3OVULATIONPHASE 
+3.3OVULATIONPHASE
 
-WhatHappens 
+WhatHappens
 
-Explainbriefly: 
+Explainbriefly:
 
-Ovulationisthereleaseofamatureegg. Itgenerallyoccursaroundthemiddleofanindividualcycle. Timingvariesbetweenwomenandbetweencycles. 
+Ovulationisthereleaseofamatureegg. Itgenerallyoccursaroundthemiddleofanindividualcycle. Timingvariesbetweenwomenandbetweencycles.
 
-Duration: 
+Duration:
 
->Ovulationoccursaroundthemiddleofyourindividualcycle.Its timingcanvary. 
+> Ovulationoccursaroundthemiddleofyourindividualcycle.Its timingcanvary.
 
-Food&Nutrition 
+Food&Nutrition
 
-Thereisnorequirementforaspecial “ovulationdiet.” Displaybalancednutritionoptions: 
+Thereisnorequirementforaspecial “ovulationdiet.” Displaybalancednutritionoptions:
 
-Protein 
+Protein
 
-# Wholegrains/millets 
+# Wholegrains/millets
 
-Fruits 
+Fruits
 
-Vegetables Nutsandseeds 
+Vegetables Nutsandseeds
 
-Healthyfats 
+Healthyfats
 
-Adequatehydration 
+Adequatehydration
 
-Activity&Yoga 
+Activity&Yoga
 
-Dependingoncomfortandenergy: 
+Dependingoncomfortandenergy:
 
-Walking 
+Walking
 
-Jogging Cycling Strengthtraining 
+Jogging Cycling Strengthtraining
 
-Dance Sports Yoga 
+Dance Sports Yoga
 
-YogaOptions 
+YogaOptions
 
-SuryaNamaskar 
+SuryaNamaskar
 
-Warriorposes 
+Warriorposes
 
-Trikonasana 
+Trikonasana
 
-Vrikshasana 
+Vrikshasana
 
-Utkatasana 
+Utkatasana
 
-Moderateyogaflow 
+Moderateyogaflow
 
-# Breathing 
+# Breathing
 
-# NadiShodhana 
+# NadiShodhana
 
-Bhramari 
+Bhramari
 
-Slowbreathing 
+Slowbreathing
 
-Donottelleveryuserthatsheneedshigh-intensityexerciseduring ovulation. 
+Donottelleveryuserthatsheneedshigh-intensityexerciseduring ovulation.
 
-3.4LUTEALPHASE 
+3.4LUTEALPHASE
 
-WhatHappens 
+WhatHappens
 
-Explainbriefly: 
+Explainbriefly:
 
-Thisphaseoccursafterovulation. 
+Thisphaseoccursafterovulation.
 
-Itcontinuesuntilthenextmenstrualbleedingbegins. 
+Itcontinuesuntilthenextmenstrualbleedingbegins.
 
-Somewomenexperiencephysical,emotionalorbehaviouralchanges duringthisphase. 
+Somewomenexperiencephysical,emotionalorbehaviouralchanges duringthisphase.
 
-Possibleexperiencesmayinclude: 
+Possibleexperiencesmayinclude:
 
-# Irritability 
+# Irritability
 
-# Moodchanges 
+# Moodchanges
 
-Anxiety 
+Anxiety
 
-Lowmood 
+Lowmood
 
-Fatigue 
+Fatigue
 
-Bloating 
+Bloating
 
-Breasttenderness 
+Breasttenderness
 
-# Headache 
+# Headache
 
-# Appetitechanges 
+# Appetitechanges
 
-Sleepchanges 
+Sleepchanges
 
-SupportiveMessage 
+SupportiveMessage
 
-> “Somepeopleexperiencechangesinmood,energy,appetite,sleep orphysicalcomfortduringthisphase.Yourexperiencemaybe differentfromsomeoneelse'sandmayvaryfromcycletocycle.” 
+> “Somepeopleexperiencechangesinmood,energy,appetite,sleep orphysicalcomfortduringthisphase.Yourexperiencemaybe differentfromsomeoneelse'sandmayvaryfromcycletocycle.”
 
-Ifsymptomsaresevereorinterferewithdailylife,directtheuser towardsprofessionalsupport. 
+Ifsymptomsaresevereorinterferewithdailylife,directtheuser towardsprofessionalsupport.
 
-Duration: 
+Duration:
 
->Thisphaseoccursafterovulationandendswhenyournextmenstrual bleedingbegins. 
+> Thisphaseoccursafterovulationandendswhenyournextmenstrual bleedingbegins.
 
-Food&Nutrition 
+Food&Nutrition
 
-Highlight: 
+Highlight:
 
-CALCIUM+VITAMIND 
+CALCIUM+VITAMIND
 
-Foodexamples: 
+Foodexamples:
 
-Calcium 
+Calcium
 
-Milk 
+Milk
 
-Curd 
+Curd
 
-Paneer 
+Paneer
 
-Ragi 
+Ragi
 
-Sesame 
+Sesame
 
-# Greenleafyvegetables 
+# Greenleafyvegetables
 
-# VitaminD 
+# VitaminD
 
-Sunlight 
+Sunlight
 
-Eggyolk 
+Eggyolk
 
-Fattyfish 
+Fattyfish
 
-Fortifiedfoods,whereavailable 
+Fortifiedfoods,whereavailable
 
-Donotautomaticallyrecommendsupplements. 
+Donotautomaticallyrecommendsupplements.
 
-Activity&Yoga 
+Activity&Yoga
 
-Iftheuserfeelswell: 
+Iftheuserfeelswell:
 
-Walking 
+Walking
 
-Aerobicexercise 
+Aerobicexercise
 
-Strengthtraining 
+Strengthtraining
 
-Yoga 
+Yoga
 
-Normalphysicalactivity 
+Normalphysicalactivity
 
-IftheuserexperiencesPMSsymptomsorlowerenergy: 
+IftheuserexperiencesPMSsymptomsorlowerenergy:
 
-Gentlewalking 
+Gentlewalking
 
-Stretching 
+Stretching
 
-Gentleyoga 
+Gentleyoga
 
-YogaOptions 
+YogaOptions
 
-Balasana 
+Balasana
 
-SuptaBaddhaKonasana 
+SuptaBaddhaKonasana
 
-Cat–Cow 
+Cat–Cow
 
-Gentleseatedforwardfold 
+Gentleseatedforwardfold
 
-# Gentlespinaltwist 
+# Gentlespinaltwist
 
-ViparitaKarani 
+ViparitaKarani
 
-Shavasana 
+Shavasana
 
-Breathing 
+Breathing
 
-NadiShodhana 
+NadiShodhana
 
-Bhramari 
+Bhramari
 
-Slowdiaphragmaticbreathing 
+Slowdiaphragmaticbreathing
 
-4.PERSONALISEDTIPS 
+4.PERSONALISEDTIPS
 
-ThisshouldbeaseparateAI-poweredfeature. TheAIshoulduseinformationavailablefrom: 
+ThisshouldbeaseparateAI-poweredfeature. TheAIshoulduseinformationavailablefrom:
 
-Currentmenstrualphase 
+Currentmenstrualphase
 
-J-DRSP-SFresults 
+J-DRSP-SFresults
 
-Additionalsymptoms 
+Additionalsymptoms
 
-Mood 
+Mood
 
-Stress 
+Stress
 
-Energy 
+Energy
 
-Sleep 
+Sleep
 
-Previousrelevantcheck-ins 
+Previousrelevantcheck-ins
 
-Previousconversations,whereappropriateandpermitted 
+Previousconversations,whereappropriateandpermitted
 
-Purpose 
+Purpose
 
-TheAIshouldidentifywhatmaybemostrelevanttotheindividualuser ratherthansimplydisplayingthegeneralphaseinformation. 
+TheAIshouldidentifywhatmaybemostrelevanttotheindividualuser ratherthansimplydisplayingthegeneralphaseinformation.
 
-# Example 
+# Example
 
-UserInformation 
+UserInformation
 
-Phase:Luteal 
+Phase:Luteal
 
-Symptoms: 
+Symptoms:
 
-Bloating 
+Bloating
 
-Lowenergy 
+Lowenergy
 
-Irritability 
+Irritability
 
-PersonalisedResponse 
+PersonalisedResponse
 
-> “You'recurrentlyinyourlutealphaseandyou'vereportedlower 
+> “You'recurrentlyinyourlutealphaseandyou'vereportedlower
 
-energy,bloatingandirritability.Youcouldconsideragentlewalk, restorativeyogaorslowbreathingtoday.Youmayalsowanttoinclude calcium-richfoodssuchascurd,milkorragiaspartofyourregular 
+energy,bloatingandirritability.Youcouldconsideragentlewalk, restorativeyogaorslowbreathingtoday.Youmayalsowanttoinclude calcium-richfoodssuchascurd,milkorragiaspartofyourregular
 
-diet.” 
+diet.”
 
-TheAIshoulduse: 
+TheAIshoulduse:
 
-- “Youcould…” 
+- “Youcould…”
 
-- “Youmay…” 
+- “Youmay…”
 
-- “Consider…” 
+- “Consider…”
 
-- “Ifthisfeelscomfortable…” 
+- “Ifthisfeelscomfortable…”
 
-# Avoid: 
+# Avoid:
 
-- “Youneedto…” 
+- “Youneedto…”
 
-- “Thiswillcure…” 
+- “Thiswillcure…”
 
-- “Youhave…” 
+- “Youhave…”
 
-# 5.PERSONALISATIONLOGIC 
+# 5.PERSONALISATIONLOGIC
 
-TheAIshouldnotrecommendanactivitysolelybasedonmenstrual phase. 
+TheAIshouldnotrecommendanactivitysolelybasedonmenstrual phase.
 
-Itshouldconsidertheuser'scurrentcondition. 
+Itshouldconsidertheuser'scurrentcondition.
 
-Example: 
+Example:
 
-Menstrualphase+highenergy 
+Menstrualphase+highenergy
 
-→Normalactivity/moderateexerciseoptions 
+→Normalactivity/moderateexerciseoptions
 
-Menstrualphase+lowenergy 
+Menstrualphase+lowenergy
 
-→Gentlemovement/breathing/rest 
+→Gentlemovement/breathing/rest
 
-Menstrualphase+cramps 
+Menstrualphase+cramps
 
-→Gentleyoga/walking/relaxation 
+→Gentleyoga/walking/relaxation
 
-Lutealphase+PMSsymptoms 
+Lutealphase+PMSsymptoms
 
-→Gentle/moderatemovement+relaxationoptions 
+→Gentle/moderatemovement+relaxationoptions
 
-Anyphase+dizziness 
+Anyphase+dizziness
 
-→Avoidautomaticallyrecommendingexercise;provideappropriate cautionandsuggestprofessionalassessmentifsymptomsare 
+→Avoidautomaticallyrecommendingexercise;provideappropriate cautionandsuggestprofessionalassessmentifsymptomsare
 
-severe,persistentorconcerning. 
+severe,persistentorconcerning.
 
-6.DISCLAIMER 
+6.DISCLAIMER
 
-PlacethisattheendofCycleEducation: 
+PlacethisattheendofCycleEducation:
 
->PersonalisedWellnessNote 
+> PersonalisedWellnessNote
 
-TheinformationprovidedbySUHRITisintendedforgeneraleducation andwellnesssupport.Menstrualexperiencesvarybetween 
+TheinformationprovidedbySUHRITisintendedforgeneraleducation andwellnesssupport.Menstrualexperiencesvarybetween
 
-individualsandfromcycletocycle.Foodandactivitysuggestionsare generaloptionsandarenotrequirements.Choosewhatfeels appropriateandcomfortableforyou. 
+individualsandfromcycletocycle.Foodandactivitysuggestionsare generaloptionsandarenotrequirements.Choosewhatfeels appropriateandcomfortableforyou.
 
-SafetyNote 
+SafetyNote
 
->Ifyouexperiencesevere,persistentorworseningsymptoms,or symptomsthatinterferewithyourdailylife,considerspeakingwitha qualifiedhealthcareprofessional. 
+> Ifyouexperiencesevere,persistentorworseningsymptoms,or symptomsthatinterferewithyourdailylife,considerspeakingwitha qualifiedhealthcareprofessional.
 
-ActivityNote 
+ActivityNote
 
->Stopanyactivitythatcausespain,dizzinessordiscomfort.Ifyou haveamedicalcondition,injury,arepregnant,orhavebeenadvisedto restrictphysicalactivity,consultaqualifiedhealthcareprofessional beforestartinganewexerciseroutine. 
+> Stopanyactivitythatcausespain,dizzinessordiscomfort.Ifyou haveamedicalcondition,injury,arepregnant,orhavebeenadvisedto restrictphysicalactivity,consultaqualifiedhealthcareprofessional beforestartinganewexerciseroutine.
 
-**J-DRSPShortForm** 
+**J-DRSPShortForm**
 
-1.Emotional&PsychologicalState 
+1.Emotional&PsychologicalState
 
-- •Ihavefeltsad,low,ordepressed. 
+- •Ihavefeltsad,low,ordepressed.
 
-- •Ihavefeltanxious,tense,oronedge. 
+- •Ihavefeltanxious,tense,oronedge.
 
-- •Ihaveexperiencednoticeablemoodchangesorfelttearful. 
+- •Ihaveexperiencednoticeablemoodchangesorfelttearful.
 
-- •Ihavefeltirritableorexperiencedconflictswithothers. 
+- •Ihavefeltirritableorexperiencedconflictswithothers.
 
-- 2.PhysicalWell-being 
+- 2.PhysicalWell-being
 
-- •Ihavefeltunusuallytired,fatigued,orlackingenergy. 
+- •Ihavefeltunusuallytired,fatigued,orlackingenergy.
 
-•Ihaveexperiencedchangesinmysleep. 
+•Ihaveexperiencedchangesinmysleep.
 
-# •Ihaveexperiencedbreasttenderness/swellingorbloating. 
+# •Ihaveexperiencedbreasttenderness/swellingorbloating.
 
-•Ihaveexperiencedheadachesormuscle/jointpain. 
+•Ihaveexperiencedheadachesormuscle/jointpain.
 
-# ResponseOptions 
+# ResponseOptions
 
-# Response 
+# Response
 
-Score 
+Score
 
-Notatall 
+Notatall
 
-1 
+1
 
-Extremelymild 
+Extremelymild
 
-2 
+2
 
-Mild 
+Mild
 
-3 
+3
 
-# Moderate 
+# Moderate
 
-4 
+4
 
-Severe 
+Severe
 
-5 
+5
 
-Extreme 
+Extreme
 
-6 
+6
 
-Scoring 
+Scoring
 
-Emotional/PsychologicalScore: 
+Emotional/PsychologicalScore:
 
-4questions→ 4–24 
+4questions→ 4–24
 
-# PhysicalWell-beingScore: 
+# PhysicalWell-beingScore:
 
-4questions→ 4–24 
+4questions→ 4–24
 
-Higherscore=greaterseverityofsymptoms. 
+Higherscore=greaterseverityofsymptoms.
 
-# Interpretation 
+# Interpretation
 
-4–8— Lowsymptomburden 
+4–8— Lowsymptomburden
 
-Feworminimalsymptomsreported. 
+Feworminimalsymptomsreported.
 
-9–16 — Moderatesymptomburden 
+9–16 — Moderatesymptomburden
 
-Somesymptomsarepresentandmaybeworthmonitoringacrossthe menstrualcycle. 
+Somesymptomsarepresentandmaybeworthmonitoringacrossthe menstrualcycle.
 
-17–24— Highersymptomburden 
+17–24— Highersymptomburden
 
-Severalsymptomsarereportedatgreaterseverity.Considertracking thesesymptomsacrosscyclesandseekingprofessionalsupportif theyarepersistentorinterferingwithdailylife. 
+Severalsymptomsarereportedatgreaterseverity.Considertracking thesesymptomsacrosscyclesandseekingprofessionalsupportif theyarepersistentorinterferingwithdailylife.
 
-Important:Theserangesaredescriptiveappranges,notvalidated diagnosticcut-offs.TheJ-DRSP-SFitselfshouldnotbeusedto 
+Important:Theserangesaredescriptiveappranges,notvalidated diagnosticcut-offs.TheJ-DRSP-SFitselfshouldnotbeusedto
 
-diagnosePMS/PMDD. 
-
-
+diagnosePMS/PMDD.
 
 <!-- Start of picture text -->
-9:41 > a1 em 9:41 em 41 ae<br>SUHRIT QO> € Cycle Tracking € Symptoms & Patterns € Symptomsy' & Patterns<br>Menstrual : of your last menstrual period?<br>Well-being. ( L This “i | where you are Understand Your Cycle AddSeAdditional y Symptoms<br>Take a she lidated qu nnaire to any y > e experie<br>ea Feel Em werec 12 March 2025 f .<br>\) © Back<br>Banycle Tracking a a===_p °-<br>Symptoms & Patterns 3<br>A | ee we Cycle Day 8 a Abbatad thatties {oor coh<br>ws Acne / skin breakout<br>TT] Cycle Education Follicular Phase = Epon aa 0 sweting / puttines<br>- nee f : @ nia @ Moderate Oe thigh<br>+ Personalised Tips eo e bd e<br>c C c+] Cc<br>1 bt ome iar 2. Cycle Tracking 3. Assessment Results 4. Additional Symptoms<br>war ace ea “o- “ ao oa “ao wa ac!<br>Cycle Education. < r' Menstrual Phase é é Menstrual Phase < r Menstrual Phase € Al Personalised Tips<br>’ 4<br>r Menstrual Phase Nant Kaper ee eee gh wellness goa<br>Menstrual bleeding occurs, and the uterine WW iron a unZ  a" ow can | support you today<br>ning &s shed, You may expenonce cramps<br>fatigue. headache. bloating and body dscomtort Iron helps replenish what is lost during corte 109 Tim feeling bloated and low on<br>Experiences<br>vary between women. menstrual bleeding © host when required energy.<br>Follicular Phase<br>ij Yoga A:\sanas (Options)(Options)<br>LY What can | do?<br>Food Sources (Indian Examples) = @ Besedon your cet hal phase<br>Vegetarian Non-Vegetarian fe gt —s “he age<br>© Leaty greens (spinach = Meet tL | Ee. we © Try 2 gentle walk or restora<br>‘ ; = * Pulse + Faas drag) oF<br>= © Seneme seeds seh ——” if porated Gnd Mt etanpsate<br>Luteal Phase How long doesit last? ae a r ‘ow manute<br>é ae . © Consider practiong Nedi Shodha<br>‘a V cova pana lp wt oto Breathing Practices (Options) « Hf your symptoms are severe<br>& ‘experience menstrual bleeding. ¢) % «@ a heeithca fers<br>Sow breathingagheegratc Nec Shochens Gertiebecdingeleation ><br>5. Cycle Education Overview 6. Phase Details - Overview 7. Phase Details - Food 8. Phase Details — Activity 9. Al Personalised Tips<br><!-- End of picture text -->
 
-
+9:41 > a1 em 9:41 em 41 ae<br>SUHRIT QO> € Cycle Tracking € Symptoms & Patterns € Symptomsy' & Patterns<br>Menstrual : of your last menstrual period?<br>Well-being. ( L This “i | where you are Understand Your Cycle AddSeAdditional y Symptoms<br>Take a she lidated qu nnaire to any y > e experie<br>ea Feel Em werec 12 March 2025 f .<br>\) © Back<br>Banycle Tracking a a===\_p °-<br>Symptoms & Patterns 3<br>A | ee we Cycle Day 8 a Abbatad thatties {oor coh<br>ws Acne / skin breakout<br>TT] Cycle Education Follicular Phase = Epon aa 0 sweting / puttines<br>- nee f : @ nia @ Moderate Oe thigh<br>+ Personalised Tips eo e bd e<br>c C c+] Cc<br>1 bt ome iar 2. Cycle Tracking 3. Assessment Results 4. Additional Symptoms<br>war ace ea “o- “ ao oa “ao wa ac!<br>Cycle Education. < r' Menstrual Phase é é Menstrual Phase < r Menstrual Phase € Al Personalised Tips<br>’ 4<br>r Menstrual Phase Nant Kaper ee eee gh wellness goa<br>Menstrual bleeding occurs, and the uterine WW iron a unZ a" ow can | support you today<br>ning &s shed, You may expenonce cramps<br>fatigue. headache. bloating and body dscomtort Iron helps replenish what is lost during corte 109 Tim feeling bloated and low on<br>Experiences<br>vary between women. menstrual bleeding © host when required energy.<br>Follicular Phase<br>ij Yoga A:\sanas <br>LY What can | do?<br>Food Sources (Indian Examples) = @ Besedon your cet hal phase<br>Vegetarian Non-Vegetarian fe gt —s “he age<br>© Leaty greens (spinach = Meet tL | Ee. we © Try 2 gentle walk or restora<br>‘ ; = \* Pulse + Faas drag) oF<br>= © Seneme seeds seh ——” if porated Gnd Mt etanpsate<br>Luteal Phase How long doesit last? ae a r ‘ow manute<br>é ae . © Consider practiong Nedi Shodha<br>‘a V cova pana lp wt oto Breathing Practices « Hf your symptoms are severe<br>& ‘experience menstrual bleeding. ¢) % «@ a heeithca fers<br>Sow breathingagheegratc Nec Shochens Gertiebecdingeleation ><br>5. Cycle Education Overview 6. Phase Details - Overview 7. Phase Details - Food 8. Phase Details — Activity 9. Al Personalised Tips<br><!-- End of picture text -->
 
 <!-- Start of picture text -->
-Menstfenst ru alal Well-beingr . {Gy( 4ce<br>Well-being vy<br>< “fr StrengX<br>oat «v= oat «v= oat ave oat ace oat ave<br>aly SUHRIT a é Cycle Tracking « Cycle Tracking € Symptoms & Patterns € Your Results<br>Hi there!<br>Well-being2 tophaseunderstand your irrent cycle J-DRSP Short Form<br>uu Cycle Day ver the past week, to what extent have @<br>‘When was the first day experienced the following<br>© Cycle Tracking racic R ee 1.1 felt down, sad or hopeless. =ernotinaae 2 nreae<br>o——— = aerate<br>tan 6 a * € © ies<br>3) Crete Edacetion jee WA Keep Observing<br>) Personalised Tips ;<br>ft v<br>1. Menstrual Well-being Home 2. Cycle Tracking — Input 3. Cycle Tracking — Result 4. Symptoms - Questionnaire 5. Symptoms — Result (Emotional)<br>oat «v= oat acm ot ac oat c= oat «vm<br>€ Additional Symptoms a Cycle Education € Menstrual Phase € Menstrual Phase € Menstrual Phase<br>“ é Menstrual Phase What happens? FeeIRON ieee General“ae, Activittivity<br>ts . FollicularAfterPhase . women Iron-rich food options © List y love<br>your period Now Vegeta Suggested Yoga Asanas<br>How long does it last? e y it<br>Ae<br>bd ae (Child's Pose) Kor<br>n Luteal Phase > ol Breathing Practices<br>. Beforeyour next period<br>Take it easy ' t absorptio<br>2 F<br>6. Additional Symptoms 7. Cycle Education(All Phases) 8. Phase Detail - Overview 9. Phase Detail- Nutrition 10. Phase Detail ~ Activity& Yoga<br>© Al Personalised Tips Your Personalised Tips A Gentle Reminder<br>ms :<br>: SUHR<br>11. Al Personalised Tips (Start)<br>12. Al Personalised Tips (Result)<br><!-- End of picture text -->
 
+Menstfenst ru alal Well-beingr . {Gy( 4ce<br>Well-being vy<br>< “fr StrengX<br>oat «v= oat «v= oat ave oat ace oat ave<br>aly SUHRIT a é Cycle Tracking « Cycle Tracking € Symptoms & Patterns € Your Results<br>Hi there!<br>Well-being2 tophaseunderstand your irrent cycle J-DRSP Short Form<br>uu Cycle Day ver the past week, to what extent have @<br>‘When was the first day experienced the following<br>© Cycle Tracking racic R ee 1.1 felt down, sad or hopeless. =ernotinaae 2 nreae<br>o——— = aerate<br>tan 6 a \* € © ies<br>3) Crete Edacetion jee WA Keep Observing<br>) Personalised Tips ;<br>ft v<br>1. Menstrual Well-being Home 2. Cycle Tracking — Input 3. Cycle Tracking — Result 4. Symptoms - Questionnaire 5. Symptoms — Result (Emotional)<br>oat «v= oat acm ot ac oat c= oat «vm<br>€ Additional Symptoms a Cycle Education € Menstrual Phase € Menstrual Phase € Menstrual Phase<br>“ é Menstrual Phase What happens? FeeIRON ieee General“ae, Activittivity<br>ts . FollicularAfterPhase . women Iron-rich food options © List y love<br>your period Now Vegeta Suggested Yoga Asanas<br>How long does it last? e y it<br>Ae<br>bd ae (Child's Pose) Kor<br>n Luteal Phase > ol Breathing Practices<br>. Beforeyour next period<br>Take it easy ' t absorptio<br>2 F<br>6. Additional Symptoms 7. Cycle Education(All Phases) 8. Phase Detail - Overview 9. Phase Detail- Nutrition 10. Phase Detail ~ Activity& Yoga<br>© Al Personalised Tips Your Personalised Tips A Gentle Reminder<br>ms :<br>: SUHR<br>11. Al Personalised Tips (Start)<br>12. Al Personalised Tips (Result)<br><!-- End of picture text -->

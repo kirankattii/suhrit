@@ -1,4 +1,4 @@
-import { Flower2, Droplet, Heart, Book } from "lucide-react-native";
+import { Flower2, Droplet, Heart } from "lucide-react-native";
 import { router } from "expo-router";
 
 import ExploreLayout, { ExploreMenuItem } from "../../components/ExploreLayout";
@@ -24,7 +24,7 @@ export default function PregnancyScreen() {
         icon={Droplet}
         title="Pregnancy Journey"
         subtitle="Track, learn and feel supported"
-        onPress={() => navigateToDetail("Pregnancy Journey", "Track, learn and feel supported")}
+        onPress={() => router.push("/explore/pregnancy/journey")}
       />
       <ExploreMenuItem
         icon={Heart}
@@ -32,13 +32,6 @@ export default function PregnancyScreen() {
         subtitle="Your recovery matters"
         onPress={() => router.push("/explore/postpartum")}
       />
-      <ExploreMenuItem
-        icon={Book}
-        title="Resources"
-        subtitle="Evidence-based information"
-        onPress={() => navigateToDetail("Resources", "Evidence-based information")}
-      />
-
     </ExploreLayout>
   );
 }

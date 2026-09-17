@@ -206,7 +206,8 @@ export default function CheckInScreen() {
         <View className="px-6 pt-12 flex-1 items-center justify-center min-h-[80vh]">
           <View className="bg-white p-8 rounded-3xl border border-suhrhit-border items-center w-full">
             <Text className="text-4xl mb-6">🌿</Text>
-            <Heading className="text-center mb-6">Thank You</Heading>
+            <Heading className="text-center mb-2">Thank You</Heading>
+            <Text className="text-center text-[11px] text-suhrhit-primary font-bold tracking-widest uppercase mb-6">Your Today's Well Being</Text>
             <Text className="text-[16px] text-suhrhit-text text-center leading-[24px] font-medium mb-8">
               {insight}
             </Text>

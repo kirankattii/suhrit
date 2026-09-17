@@ -1,7 +1,8 @@
 import { router } from "expo-router";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ChevronLeft, ChevronRight, Leaf, Apple, Stethoscope, Pill, Brain, Dna, Shield, AlertTriangle } from "lucide-react-native";
+import { ChevronLeft, ChevronDown, ChevronUp, Leaf, Apple, Stethoscope, Pill, Brain, Dna, Shield, AlertTriangle } from "lucide-react-native";
+import { useState } from "react";
 
 export const TOPICS = [
   {
@@ -72,6 +73,7 @@ export const TOPICS = [
 
 export default function PrepareTogetherScreen() {
   const insets = useSafeAreaInsets();
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
     <View className="flex-1 bg-[#FAFAFA]" style={{ paddingTop: insets.top }}>
@@ -90,24 +92,51 @@ export default function PrepareTogetherScreen() {
         </Text>
 
         <View className="pb-10">
-          {TOPICS.map((topic) => (
-            <TouchableOpacity 
-              key={topic.id}
-              className="bg-white rounded-[24px] p-5 mb-4 flex-row items-center shadow-sm border border-[#F5F5F5]"
-              onPress={() => router.push(`/explore/pregnancy/preconception/topic-detail?id=${topic.id}`)}
-            >
-              <View className="w-12 h-12 rounded-full items-center justify-center mr-4" style={{ backgroundColor: topic.iconBg }}>
-                <topic.icon color={topic.iconColor} size={24} />
-              </View>
-              <View className="flex-1">
-                <Text className="text-suhrhit-primary font-bold text-[16px] mb-1">{topic.title}</Text>
-                <Text className="text-suhrhit-secondary text-[12px] leading-[18px]" numberOfLines={2}>
-                  {topic.subtitle.split('\n')[0]}
-                </Text>
-              </View>
-              <ChevronRight color="#CBD5E1" size={20} />
-            </TouchableOpacity>
-          ))}
+          {TOPICS.map((topic) => {
+            const isExpanded = expandedId === topic.id;
+            const points = topic.subtitle.split('\n');
+
+            return (
+              <TouchableOpacity 
+                key={topic.id}
+                activeOpacity={0.8}
+                className="bg-white rounded-[24px] p-5 mb-4 shadow-sm border border-[#F5F5F5]"
+                onPress={() => setExpandedId(isExpanded ? null : topic.id)}
+              >
+                <View className="flex-row items-center">
+                  <View className="w-12 h-12 rounded-full items-center justify-center mr-4" style={{ backgroundColor: topic.iconBg }}>
+                    <topic.icon color={topic.iconColor} size={24} />
+                  </View>
+                  <View className="flex-1">
+                    <Text className="text-suhrhit-primary font-bold text-[16px] mb-1">{topic.title}</Text>
+                    {!isExpanded && (
+                      <Text className="text-suhrhit-secondary text-[12px] leading-[18px]" numberOfLines={2}>
+                        {points[0]}
+                      </Text>
+                    )}
+                  </View>
+                  {isExpanded ? (
+                    <ChevronUp color="#CBD5E1" size={20} />
+                  ) : (
+                    <ChevronDown color="#CBD5E1" size={20} />
+                  )}
+                </View>
+
+                {isExpanded && (
+                  <View className="mt-4 pt-4 border-t border-[#F5F5F5] w-full gap-3">
+                    {points.map((point, idx) => (
+                      <View key={idx} className="flex-row items-start">
+                        <View className="w-1.5 h-1.5 rounded-full mt-1.5 mr-3" style={{ backgroundColor: topic.iconColor }} />
+                        <Text className="flex-1 text-suhrhit-primary text-[14px] leading-[20px]">
+                          {point}
+                        </Text>
+                      </View>
+                    ))}
+                  </View>
+                )}
+              </TouchableOpacity>
+            );
+          })}
 
           <View className="bg-[#F5F9FF] rounded-2xl p-4 mt-4">
             <Text className="text-[#7293B3] text-[12px] text-center leading-[18px]">

@@ -5,7 +5,6 @@ import {
   Baby,
   Brain,
   Droplet,
-  Leaf,
   Stethoscope,
   Users,
 } from "lucide-react-native";
@@ -13,6 +12,7 @@ import { useCallback, useEffect, useState } from "react";
 import {
   Alert,
   Dimensions,
+  Image,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -23,6 +23,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import BottomTabBar from "../components/BottomTabBar";
 import { getProfile, ProfileData } from "../storage/onboarding";
 import { canTakeDailyCheckin, canTakeWHO5 } from "../storage/wellbeing";
+import { getGratitudeStreak } from "../storage/gratitude";
 
 const { width } = Dimensions.get("window");
 const CARD_WIDTH = (width - 48 - 16) / 2; // 48 for px-6, 16 for gap
@@ -31,6 +32,7 @@ export default function HomeScreen() {
   const [profile, setProfile] = useState<ProfileData | null>(null);
   const [allowDailyCheckin, setAllowDailyCheckin] = useState(true);
   const [allowWHO5, setAllowWHO5] = useState(true);
+  const [gratitudeStreak, setGratitudeStreak] = useState(0);
   const insets = useSafeAreaInsets();
 
   useFocusEffect(
@@ -38,8 +40,10 @@ export default function HomeScreen() {
       const checkAvailability = async () => {
         const canDaily = await canTakeDailyCheckin();
         const canW5 = await canTakeWHO5();
+        const streakData = await getGratitudeStreak();
         setAllowDailyCheckin(canDaily);
         setAllowWHO5(canW5);
+        setGratitudeStreak(streakData.streak);
       };
       checkAvailability();
     }, []),
@@ -57,6 +61,21 @@ export default function HomeScreen() {
 
     loadProfile();
   }, []);
+
+  let treeImage = require("../assets/images/games/gratitude/seed.jpg");
+  if (gratitudeStreak >= 21) {
+    treeImage = require("../assets/images/games/gratitude/majestic_tree.jpg");
+  } else if (gratitudeStreak >= 14) {
+    treeImage = require("../assets/images/games/gratitude/tree.jpg");
+  } else if (gratitudeStreak >= 7) {
+    treeImage = require("../assets/images/games/gratitude/young_tree.jpg");
+  } else if (gratitudeStreak >= 4) {
+    treeImage = require("../assets/images/games/gratitude/sapling.jpg");
+  } else if (gratitudeStreak >= 2) {
+    treeImage = require("../assets/images/games/gratitude/plant.jpg");
+  } else if (gratitudeStreak >= 1) {
+    treeImage = require("../assets/images/games/gratitude/sprout.jpg");
+  }
 
   const firstName = profile?.name?.split(" ")[0] || "Srishti";
 
@@ -79,9 +98,20 @@ export default function HomeScreen() {
               Good morning{"\n"}
               {firstName}!
             </Text>
-            {/* Plant Illustration Placeholder */}
-            <View className="absolute right-[-10px] bottom-[-20px] opacity-80">
-              <Leaf size={100} color="#2A5C43" strokeWidth={1} />
+            {/* Gratitude Tree */}
+            <View className="absolute right-[-10px] bottom-[-10px] items-center">
+              {gratitudeStreak > 0 && (
+                <View className="bg-white/80 px-3 py-1 rounded-full mb-1 shadow-sm">
+                  <Text className="text-[#1E3A2F] text-[10px] font-bold text-center tracking-widest uppercase">
+                    🔥 {gratitudeStreak} Day{gratitudeStreak !== 1 ? 's' : ''}
+                  </Text>
+                </View>
+              )}
+              <Image 
+                source={treeImage}
+                style={{ width: 100, height: 100 }}
+                resizeMode="contain"
+              />
             </View>
           </View>
         </View>
@@ -171,7 +201,7 @@ export default function HomeScreen() {
                 title: "Social\nRelationship &\nSupport",
                 route: "/explore/relationships",
                 bgColor: "bg-[#D3C7F3]",
-                icon: Users,
+                imageSource: require("../assets/images/social_support_icon.png"),
                 leading: "leading-[18px]",
               },
               {
@@ -191,12 +221,16 @@ export default function HomeScreen() {
                   className={`${item.bgColor} rounded-[24px] p-5 pt-3 items-center justify-center aspect-square`}
                   activeOpacity={0.7}
                 >
-                  <IconComponent
-                    size={32}
-                    color="#1A1A1A"
-                    strokeWidth={1.5}
-                    className="mb-3"
-                  />
+                  {item.imageSource ? (
+                    <Image source={item.imageSource} style={{ width: 52, height: 52, marginBottom: 12, resizeMode: "contain" }} />
+                  ) : (
+                    item.icon && <IconComponent
+                      size={32}
+                      color="#1A1A1A"
+                      strokeWidth={1.5}
+                      className="mb-3"
+                    />
+                  )}
                   <Text
                     className={`text-[#1A1A1A] font-bold text-center ${item.leading} text-[15px]`}
                   >

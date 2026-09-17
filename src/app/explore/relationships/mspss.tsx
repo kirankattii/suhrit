@@ -3,6 +3,7 @@ import { router } from "expo-router";
 import Questionnaire, { Question } from "../../../components/relationships/Questionnaire";
 import ResultScreen from "../../../components/relationships/ResultScreen";
 import { Users } from "lucide-react-native";
+import { saveRelationshipResult } from "../../../storage/relationships";
 
 const mspssOptions = [
   "Very Strongly Disagree",
@@ -35,8 +36,19 @@ export default function MSPSSScreen() {
   const [step, setStep] = useState<Step>("test");
   const [score, setScore] = useState(0);
 
-  const handleComplete = (totalScore: number) => {
+  const handleComplete = async (totalScore: number) => {
     setScore(totalScore);
+    
+    let bandLabel = "";
+    if (totalScore <= 35) {
+      bandLabel = "Low social support";
+    } else if (totalScore <= 60) {
+      bandLabel = "Moderate support";
+    } else {
+      bandLabel = "High support";
+    }
+    
+    await saveRelationshipResult('mspss', totalScore, 84, bandLabel);
     setStep("result");
   };
 

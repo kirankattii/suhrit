@@ -95,7 +95,10 @@ export default function SupportScreen() {
           </View>
 
           {/* Contact Button */}
-          <TouchableOpacity className="flex-row items-center justify-center bg-[#D32F2F] rounded-[16px] py-4 mb-8 shadow-sm">
+          <TouchableOpacity 
+            onPress={() => router.push("/explore/professional")}
+            className="flex-row items-center justify-center bg-[#D32F2F] rounded-[16px] py-4 mb-8 shadow-sm"
+          >
             <Phone color="#FFFFFF" size={20} className="mr-2" />
             <Text className="text-white font-bold text-[15px]">Contact Healthcare Provider</Text>
           </TouchableOpacity>

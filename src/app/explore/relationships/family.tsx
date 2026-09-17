@@ -5,6 +5,7 @@ import ResultScreen from "../../../components/relationships/ResultScreen";
 import IssueSelectionScreen, { IssueOption } from "../../../components/relationships/IssueSelectionScreen";
 import InsightSolutionScreen from "../../../components/relationships/InsightSolutionScreen";
 import { MessageCircle, ShieldAlert, Users, Heart, ShieldX, HelpCircle, Home } from "lucide-react-native";
+import { saveRelationshipResult } from "../../../storage/relationships";
 
 const ffcsOptions = [
   "Completely false",
@@ -60,8 +61,19 @@ export default function FamilyScreen() {
     return total;
   };
 
-  const handleTestComplete = (totalScore: number) => {
+  const handleTestComplete = async (totalScore: number) => {
     setScore(totalScore);
+
+    let bandLabel = "";
+    if (totalScore <= 14) {
+      bandLabel = "Lower Support";
+    } else if (totalScore <= 28) {
+      bandLabel = "Moderate Support";
+    } else {
+      bandLabel = "Higher Support";
+    }
+    
+    await saveRelationshipResult('family', totalScore, 42, bandLabel);
     setStep("result");
   };
 

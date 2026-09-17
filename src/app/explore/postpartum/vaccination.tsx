@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import { ChevronLeft } from "lucide-react-native";
 import { router } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import BottomTabBar from "../../../components/BottomTabBar";
 
@@ -37,8 +38,29 @@ export default function VaccinationScreen() {
   const insets = useSafeAreaInsets();
   const [checks, setChecks] = useState<Record<string, boolean>>({});
 
-  const toggleCheck = (age: string) => {
-    setChecks(prev => ({ ...prev, [age]: !prev[age] }));
+  useEffect(() => {
+    loadChecks();
+  }, []);
+
+  const loadChecks = async () => {
+    try {
+      const savedChecks = await AsyncStorage.getItem("vaccinationChecks");
+      if (savedChecks) {
+        setChecks(JSON.parse(savedChecks));
+      }
+    } catch (error) {
+      console.error("Error loading vaccination checks:", error);
+    }
+  };
+
+  const toggleCheck = async (age: string) => {
+    try {
+      const newChecks = { ...checks, [age]: !checks[age] };
+      setChecks(newChecks);
+      await AsyncStorage.setItem("vaccinationChecks", JSON.stringify(newChecks));
+    } catch (error) {
+      console.error("Error saving vaccination checks:", error);
+    }
   };
 
   return (

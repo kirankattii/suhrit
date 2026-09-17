@@ -94,7 +94,7 @@ export default function EmotionalScreen() {
 
           {/* WHO-5 Button */}
           <TouchableOpacity 
-            onPress={() => router.push("/who5")}
+            onPress={() => router.push("/assessment")}
             className="flex-row items-center justify-center bg-[#183059] rounded-[16px] py-4 mb-8 shadow-sm"
           >
             <Activity color="#FFFFFF" size={20} className="mr-2" />

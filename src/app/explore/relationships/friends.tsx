@@ -5,6 +5,7 @@ import ResultScreen from "../../../components/relationships/ResultScreen";
 import IssueSelectionScreen, { IssueOption } from "../../../components/relationships/IssueSelectionScreen";
 import InsightSolutionScreen from "../../../components/relationships/InsightSolutionScreen";
 import { Users, UserMinus, MessageCircle, Frown, HeartOff, UserPlus, Clock, ShieldAlert, CloudOff, HelpCircle } from "lucide-react-native";
+import { saveRelationshipResult } from "../../../storage/relationships";
 
 const fnsOptions = [
   "Not at all agree",
@@ -51,8 +52,19 @@ export default function FriendsScreen() {
   const [score, setScore] = useState(0);
   const [selectedIssueId, setSelectedIssueId] = useState<string | null>(null);
 
-  const handleTestComplete = (totalScore: number) => {
+  const handleTestComplete = async (totalScore: number) => {
     setScore(totalScore);
+
+    let bandLabel = "";
+    if (totalScore <= 23) {
+      bandLabel = "Lower satisfaction";
+    } else if (totalScore <= 46) {
+      bandLabel = "Moderate satisfaction";
+    } else {
+      bandLabel = "Higher satisfaction";
+    }
+    
+    await saveRelationshipResult('friends', totalScore, 70, bandLabel);
     setStep("result");
   };
 

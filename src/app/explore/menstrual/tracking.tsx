@@ -5,7 +5,7 @@ import { router } from "expo-router";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import DarkScreen from "../../../components/menstrual/DarkScreen";
 import CircularProgress from "../../../components/menstrual/CircularProgress";
-import { getCycleInfo, CycleInfo } from "../../../utils/menstrualCalculations";
+import { getCycleInfo, CycleInfo, calculateCycleWithDelay, CycleDelayState } from "../../../utils/menstrualCalculations";
 
 export default function CycleTrackingScreen() {
   const [lastPeriodDate, setLastPeriodDate] = useState<Date>(() => {
@@ -17,10 +17,13 @@ export default function CycleTrackingScreen() {
   const [showPicker, setShowPicker] = useState(false);
   const [cycleInfo, setCycleInfo] = useState<CycleInfo | null>(null);
   const [showResults, setShowResults] = useState(false);
+  const [cycleDuration, setCycleDuration] = useState(28); // default to 28 days
+  const [delayState, setDelayState] = useState<CycleDelayState | null>(null);
 
   useEffect(() => {
     setCycleInfo(getCycleInfo(lastPeriodDate));
-  }, [lastPeriodDate]);
+    setDelayState(calculateCycleWithDelay(lastPeriodDate, cycleDuration));
+  }, [lastPeriodDate, cycleDuration]);
 
   const handleContinue = () => {
     setShowResults(true);
@@ -34,6 +37,7 @@ export default function CycleTrackingScreen() {
     setLastPeriodDate(currentDate);
     // If we've already shown results, recalculate instantly
     setCycleInfo(getCycleInfo(currentDate));
+    setDelayState(calculateCycleWithDelay(currentDate, cycleDuration));
   };
 
   const formatDate = (d: Date) => {
@@ -113,9 +117,15 @@ export default function CycleTrackingScreen() {
             <Text className="text-[#0D1B2A] font-bold text-[16px]">Continue</Text>
           </TouchableOpacity>
         ) : (
-          <View className="mt-4 mb-10 items-center">
-            {cycleInfo && (
+          <View className="mt-4 mb-10 items-center w-full">
+            {cycleInfo && delayState && (
               <>
+                <View className={`px-6 py-2.5 rounded-full mb-8 ${delayState.isDelayed ? 'bg-[#FF8FA3]/20 border border-[#FF8FA3]/50' : 'bg-[#1E335A]'}`}>
+                  <Text className={`font-bold text-[15px] ${delayState.isDelayed ? 'text-[#FF8FA3]' : 'text-white'}`}>
+                    {delayState.statusMessage}
+                  </Text>
+                </View>
+
                 <CircularProgress 
                   currentDay={cycleInfo.cycleDay} 
                   currentPhase={cycleInfo.currentPhase} 

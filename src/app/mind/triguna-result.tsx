@@ -1,7 +1,10 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { ChevronLeft } from "lucide-react-native";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { useEffect, useState } from "react";
+import { View, Text, TouchableOpacity, ScrollView, ActivityIndicator } from "react-native";
 import Svg, { Circle, G } from "react-native-svg";
+
+import { generateInsight } from "../../ai/client";
 
 import Button from "../../components/Button";
 import Screen from "../../components/Screen";
@@ -46,6 +49,28 @@ export default function TrigunaResultScreen() {
 
   const result = JSON.parse(decodeURIComponent(resultParam)) as TrigunaResult;
   const guidance = GUIDANCE[result.dominantProfile];
+
+  const [aiFeedback, setAiFeedback] = useState<string | null>(null);
+  const [loadingFeedback, setLoadingFeedback] = useState(true);
+
+  useEffect(() => {
+    async function fetchFeedback() {
+      const prompt = `
+You are an empathetic Ayurvedic psychological counselor analyzing a user's results from the NIMHANS Triguna scale.
+The user's energy profile is:
+- Sattva (balance, harmony): ${result.sattva}
+- Rajas (action, restlessness): ${result.rajas}
+- Tamas (inertia, lethargy): ${result.tamas}
+- Dominant profile identified: ${result.dominantProfile}
+
+Provide a short, supportive, and personalized paragraph explaining what this means for their current state of mind and gently suggesting one small, practical lifestyle adjustment they could make to achieve more balance (Sattva). Be warm and encouraging. Do not use markdown bullet points, just write 3-4 flowing sentences.
+`;
+      const feedback = await generateInsight(prompt);
+      setAiFeedback(feedback || "I'm sorry, but I couldn't generate personalized feedback right now. Please try again later.");
+      setLoadingFeedback(false);
+    }
+    fetchFeedback();
+  }, []);
 
   // Donut Chart logic
   const size = 200;
@@ -151,6 +176,21 @@ export default function TrigunaResultScreen() {
               <Text className="text-[12px] text-gray-500">Tamas</Text>
             </View>
           </View>
+        </View>
+
+        {/* AI Feedback Section */}
+        <View className="bg-[#FEF3C7] rounded-3xl p-6 shadow-sm border border-[#FDE68A] mb-8">
+          <Text className="text-[#B45309] font-bold text-[18px] mb-3">Ayurvedic AI Insights</Text>
+          {loadingFeedback ? (
+            <View className="py-4 items-center justify-center">
+              <ActivityIndicator size="small" color="#D97706" />
+              <Text className="text-[#D97706] mt-2 text-[13px]">Analyzing your energy patterns...</Text>
+            </View>
+          ) : (
+            <Text className="text-[#92400E] text-[15px] leading-[24px]">
+              {aiFeedback}
+            </Text>
+          )}
         </View>
 
         <Button title="Done" onPress={() => router.push("/mind")} />

@@ -3,19 +3,73 @@ import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ChevronLeft, ChevronRight, Leaf, Shield, AlertCircle, Info, BookOpen, MessageCircle } from "lucide-react-native";
 import { CHECKIN_QUESTIONS } from "./check-in";
-import { useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
+import { getPreconceptionHistory, PreconceptionResult } from "../../../../storage/wellbeing";
 
 export default function CheckInResultsScreen() {
   const insets = useSafeAreaInsets();
   const { answersData } = useLocalSearchParams<{ answersData: string }>();
   
-  const answers: Record<number, boolean> = useMemo(() => {
-    try {
-      return answersData ? JSON.parse(answersData) : {};
-    } catch (e) {
-      return {};
+  const [historyResult, setHistoryResult] = useState<PreconceptionResult | null>(null);
+  const [isLoading, setIsLoading] = useState(!answersData);
+
+  useEffect(() => {
+    if (!answersData) {
+      getPreconceptionHistory().then(history => {
+        if (history && history.length > 0) {
+          setHistoryResult(history[history.length - 1]);
+        }
+        setIsLoading(false);
+      });
     }
   }, [answersData]);
+
+  const answers: Record<number, boolean> | null = useMemo(() => {
+    if (answersData) {
+      try {
+        return JSON.parse(answersData);
+      } catch (e) {
+        return null;
+      }
+    } else if (historyResult) {
+      return historyResult.answers;
+    }
+    return null;
+  }, [answersData, historyResult]);
+
+  if (isLoading) return null;
+
+  if (!answers) {
+    return (
+      <View className="flex-1 bg-[#FAFAFA]" style={{ paddingTop: insets.top }}>
+        <View className="px-6 py-4 flex-row items-center border-b border-[#F0F0F0]">
+          <TouchableOpacity onPress={() => router.back()} className="mr-4">
+            <ChevronLeft color="#183059" size={28} />
+          </TouchableOpacity>
+          <Text className="text-suhrhit-primary font-bold text-[18px]" style={{ fontFamily: 'Georgia' }}>
+            Your Check-in Result
+          </Text>
+        </View>
+        <View className="flex-1 items-center justify-center px-6">
+          <View className="w-20 h-20 bg-[#FCE7F3] rounded-full items-center justify-center mb-6">
+            <AlertCircle color="#DB2777" size={32} />
+          </View>
+          <Text className="text-suhrhit-primary font-bold text-[20px] text-center mb-3" style={{ fontFamily: 'Georgia' }}>
+            No Results Yet
+          </Text>
+          <Text className="text-suhrhit-secondary text-center text-[15px] leading-[22px] mb-8">
+            Take a test and get your results to see which areas you may want to focus on before conception.
+          </Text>
+          <TouchableOpacity 
+            className="bg-[#FFB6C1] rounded-full py-4 px-8 items-center justify-center shadow-sm"
+            onPress={() => router.replace("/explore/pregnancy/preconception/check-in")}
+          >
+            <Text className="text-[#183059] font-bold text-[16px]">Take a Test</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
 
   const score = Object.values(answers).filter(val => val === true).length;
   
@@ -41,8 +95,8 @@ export default function CheckInResultsScreen() {
         <TouchableOpacity onPress={() => router.back()} className="mr-4">
           <ChevronLeft color="#183059" size={28} />
         </TouchableOpacity>
-        <Text className="text-suhrhit-primary font-bold text-[20px]" style={{ fontFamily: 'Georgia' }}>
-          Your Preconception Check-in Result
+        <Text className="text-suhrhit-primary font-bold text-[18px]" style={{ fontFamily: 'Georgia' }}>
+          Your Check-in Result
         </Text>
       </View>
 
