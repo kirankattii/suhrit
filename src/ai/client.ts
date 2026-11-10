@@ -5,7 +5,6 @@ const BASE_URL = "https://api.xkiro.com/v1/chat/completions";
 
 export async function generateInsight(
   prompt: string,
-  maxRetries = 3,
 ): Promise<string | null> {
   const profile = await getProfile();
 
@@ -24,7 +23,17 @@ Note: Always adapt your tone, empathy, and advice to match this user's specific 
 
   const finalPrompt = profileContext + prompt;
 
-  for (let attempt = 0; attempt < maxRetries; attempt++) {
+  const models = [
+    "qwen/qwen3.8-omni-flash:free",
+    "qwen/qwen3.7-max:free",
+    "sensenova/sensenova-6.8-flash-lite",
+    "mistralai/mistral-large-2512",
+    "minimax/minimax-m2.7:free",
+    "qwen/qwen3.8-max:free",
+  ];
+
+  for (let attempt = 0; attempt < models.length; attempt++) {
+    const currentModel = models[attempt];
     try {
       const response = await fetch(BASE_URL, {
         method: "POST",
@@ -33,36 +42,35 @@ Note: Always adapt your tone, empathy, and advice to match this user's specific 
           Authorization: `Bearer ${API_KEY}`,
         },
         body: JSON.stringify({
-          // model: "openai/gpt-5.6-sol",
-          // model: "openai/gpt-5.3-codex-spark",
-          model: "minimax/minimax-m3:free",
-
+          model: currentModel,
           messages: [{ role: "user", content: finalPrompt }],
         }),
       });
 
-      if (response.status === 503 || response.status === 429) {
+      if (response.status === 503 || response.status === 429 || !response.ok) {
         console.warn(
-          `AI API High Demand (${response.status}). Retrying... (${attempt + 1}/${maxRetries})`,
+          `AI API Error with model ${currentModel} (${response.status}). Switching model... (${attempt + 1}/${models.length})`,
         );
-        await new Promise((resolve) =>
-          setTimeout(resolve, 1000 * Math.pow(2, attempt)),
-        );
-        continue;
-      }
+        if (!response.ok && response.status !== 503 && response.status !== 429) {
+          console.error("AI API Error Details:", await response.text());
+        }
 
-      if (!response.ok) {
-        console.error("AI API Error:", await response.text());
-        return null;
+        if (attempt < models.length - 1) {
+          await new Promise((resolve) =>
+            setTimeout(resolve, 1000),
+          );
+        }
+        continue;
       }
 
       const data = await response.json();
       return data.choices?.[0]?.message?.content || null;
     } catch (error) {
-      console.error("Failed to generate insight:", error);
-      if (attempt === maxRetries - 1) return null;
+      console.error(`Failed to generate insight with model ${currentModel}:`, error);
+      if (attempt === models.length - 1) return null;
+
       await new Promise((resolve) =>
-        setTimeout(resolve, 1000 * Math.pow(2, attempt)),
+        setTimeout(resolve, 1000),
       );
     }
   }
